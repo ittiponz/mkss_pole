@@ -3,6 +3,8 @@
 	include("php/function.php");
 	$infostr="";
 	$login_sucess=false;
+	$subject="11";
+	$web="22";
 	//checkLogin();
 	//if login
 	if(isset($_POST['user_name'])){
@@ -91,6 +93,11 @@
 			</div>
 			<!-- footer -->
 			<?php include("footer.php"); ?>
+			<p class=" text-right">
+				<?php 
+					echo "Study " . $subject . " at " . $web;
+				?>
+			</p>
 		</div>
 	</div>
 	

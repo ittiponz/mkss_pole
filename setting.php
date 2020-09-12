@@ -3,6 +3,7 @@
 	
 	if(isset($_GET['ran'])){$ran=$_GET['ran'];}
 	if(isset($_POST['ran'])){$ran=$_POST['ran'];}
+	if(isset($_GET['web'])){$web=$_GET['web'];}else{$web="";}
 	
 	$sqlx="SELECT * FROM user WHERE usr_ran='".$ran."';";
 	$result=mysqli_query($db, $sqlx); 
@@ -120,7 +121,7 @@
 											<div class="col-md-12">
 												<div class="card">
 													<div class="card-header">
-														<h4 class="card-title">System Setting</h4>
+														<h4 class="card-title">System Setting <?php echo $web;?></h4>
 													
 													</div>
 													<div class="card-body">
