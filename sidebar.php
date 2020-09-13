@@ -1,7 +1,13 @@
+<?php
+    if ($p=="dash") {$pd = "active";}else{$pd = "";}
+    if ($p=="report") {$pr = "active";}else{$pr = "";}
+    if ($p=="setting") {$ps = "active";}else{$ps = "";}
+?>
+
     <div class="sidebar">
         <div class="scrollbar-inner sidebar-wrapper">
             <ul class="nav">
-                <li class="nav-item active">
+                <li class="nav-item <?php echo $pd;?>">
                     <?php	
                         echo "	<a href=\"dash.php?ran=".$ran."\">"; 
                         echo "	<i class=\"la la-users\"></i>";
@@ -9,7 +15,7 @@
                         echo "	</a>";
                     ?>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo $pr;?>">
                     <?php	
                         echo "	<a href=\"report.php?ran=".$ran."\">"; 
                         echo "	<i class=\"la la-newspaper-o\"></i>";
@@ -17,7 +23,7 @@
                         echo "	</a>";
                     ?>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo $ps;?>">
                     <?php	
                         echo "	<a href=\"setting.php?ran=".$ran."\">"; 
                         echo "	<i class=\"la la-keyboard-o\"></i>";
