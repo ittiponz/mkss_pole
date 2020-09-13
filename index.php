@@ -93,11 +93,6 @@
 			</div>
 			<!-- footer -->
 			<?php include("footer.php"); ?>
-			<p class=" text-right">
-				<?php 
-					echo "Study " . $subject . " at " . $web;
-				?>
-			</p>
 		</div>
 	</div>
 	
