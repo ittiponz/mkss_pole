@@ -1,8 +1,8 @@
 <?php
  /* define('DB_SERVER', 'localhost');
- define('DB_USERNAME', 'mkssewsd_ploe');
- define('DB_PASSWORD', 'mkssewsd');
- define('DB_DATABASE', 'mkssewsd_ploe'); */
+ define('DB_USERNAME', 'mkssewsd_pole');
+ define('DB_PASSWORD', 'smartpolepole');
+ define('DB_DATABASE', 'mkssewsd_pole'); */
  define('DB_SERVER', 'localhost');
  define('DB_USERNAME', 'root');
  define('DB_PASSWORD', '');
