@@ -23,7 +23,7 @@
 			
 			var myCenter = new google.maps.LatLng(13.871187,100.589865);
 			var myOptions = {
-				zoom: 11,
+				zoom: 10,
 				center: myCenter,
 				//mapTypeId: google.maps.MapTypeId.HYBRID
 			};
