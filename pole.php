@@ -160,7 +160,7 @@
 											<p class="text-muted">1.Fire Alarm</p>
 											<p class="text-muted">2.Switch</p>
 										</div>
-										<div class="u-img"><img src="assets/img/pole.png"></div>
+										<div class="u-img"><img src="assets/img/pole_02.png"></div>
 										
 										<div class="u-text">
 											<h4></h4>
