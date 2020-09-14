@@ -21,7 +21,7 @@
 		var marker;
 		function initMap() { 
 			
-			var myCenter = new google.maps.LatLng(13.871187,100.589865);
+			var myCenter = new google.maps.LatLng(13.971187,100.589865);
 			var myOptions = {
 				zoom: 10,
 				center: myCenter,
