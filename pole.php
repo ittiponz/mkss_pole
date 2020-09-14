@@ -1,10 +1,12 @@
 <?php
 	include("php/config.php");
+	include("php/checkuser.php");
+	include("php/function.php");
+	$p="pole";
 	
-	if(isset($_GET['ran'])){$ran=$_GET['ran'];}
-	if(isset($_POST['ran'])){$ran=$_POST['ran'];}
 	if(isset($_GET['pole_name'])){$pole_name=$_GET['pole_name'];}
-	if(isset($_POST['pole_name'])){$pole_name=$_POST['pole_name'];}
+
+
 	
 	$sqlx="SELECT * FROM user WHERE usr_ran='".$ran."';";
 	$result=mysqli_query($db, $sqlx); 
@@ -41,96 +43,18 @@
 				$pole_lat=$row['pole_lat'];
 				$pole_lon=$row['pole_lon'];
 			}
-			$sqlx="SELECT * FROM pole WHERE pole_name = '$pole_name'";			
-			$resultx=mysqli_query($db,$sqlx);
-			if(mysqli_num_rows($resultx) > 0){
-				$rowx = mysqli_fetch_array($result,MYSQLI_ASSOC);
-				$pole_id=$rowx['pole_id'];
-				$pole_name=$rowx['pole_name'];
-				$pole_lat=$rowx['pole_lat'];
-				$pole_lon=$rowx['pole_lon'];
-			}
 		?>
 		
 	<div class="wrapper">
 		<div class="main-header">
-			<div class="logo-header">
-				<a href="index.php" class="logo">
-					<img align ='center' width="180" height="60"src="assets/img/tot-inno.png">	
-				</a>
-				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
-			</div>
-			<nav class="navbar navbar-header navbar-expand-lg">
-				<div class="container-fluid">
-				<!--	
-					<form class="navbar-left navbar-form nav-search mr-md-3" action="">
-						<div class="input-group">
-							<input type="text" placeholder="Search ..." class="form-control">
-							<div class="input-group-append">
-								<span class="input-group-text">
-									<i class="la la-search search-icon"></i>
-								</span>
-							</div>
-						</div>
-					</form>
-					-->
-					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-						<li class="nav-item dropdown hidden-caret"></li>
-						<li class="nav-item dropdown hidden-caret"></li>
-						<li class="nav-item dropdown">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/logo_admin.jpg" alt="user-img" width="36" class="img-circle"><span >UserName</span></span> </a>
-							<ul class="dropdown-menu dropdown-user">
-								<li>
-									<div class="user-box">
-										<div class="u-img"><img src="assets/img/logo_admin.jpg" alt="user"></div>
-										<div class="u-text">
-											<h4>UserName</h4>
-											<p class="text-muted">UserType</p></div>
-										</div>
-									</li>
-								
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
-								</ul>
-								<!-- /.dropdown-user -->
-							</li>
-						</ul>
-					</div>
-				</nav>
-			</div>
-			<div class="sidebar">
-				<div class="scrollbar-inner sidebar-wrapper">
-					<ul class="nav">
-						<li class="nav-item">
-							<a href="index.php">
-								<i class="la la-users"></i>
-								<p>User</p>
-								<span class="badge badge-count">5</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="report.php">
-								<i class="la la-newspaper-o"></i>
-								<p>Report</p>
-								<span class="badge badge-count">14</span>
-							</a>
-						</li>
-						<li class="nav-item active">
-							<a href="setting.php">
-								<i class="la la-keyboard-o"></i>
-								<p>System Setting</p>
-								<span class="badge badge-count">50</span>
-							</a>
-						</li>
-						
-					</ul>
-				</div>
-			</div>
+			<!-- logo  -->
+			<?php include("logo.php");?>
+			<!-- nevbar -->
+			<?php include("nevbar.php");?>
+			<!-- side bar //start -->
+			<?php include("sidebarP.php");?>
+			<!-- side bar //end -->
+			
 			<div class="main-panel">
 				<div class="content">
 					<div class="container-fluid">
@@ -221,7 +145,7 @@
 							
 						</nav>
 						<div class="copyright ml-auto">
-							2020, made with <i class="la la-heart heart text-danger"></i> by <a href="http://www.mkss.co.th">MKSS</a>
+							<?php echo	$pole_name;?>2020, made with <i class="la la-heart heart text-danger"></i> by <a href="http://www.mkss.co.th">MKSS</a>
 						</div>				
 					</div>
 				</footer>

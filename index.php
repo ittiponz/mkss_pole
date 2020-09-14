@@ -3,10 +3,6 @@
 	include("php/function.php");
 	$infostr="";
 	$login_sucess=false;
-	$subject="11";
-	$web="22";
-	//checkLogin();
-	//if login
 	if(isset($_POST['user_name'])){
 		
 		$usr_name=$_POST['user_name'];
@@ -44,6 +40,7 @@
 		exit(0);
 	}			
 
+	$p="dash";
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,8 +52,60 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
 	<link rel="stylesheet" href="assets/css/ready.css">
 	<link rel="stylesheet" href="assets/css/demo.css">
+
+	
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO0ZcyhJ9ZuCpC0p4Gst82f1Bru7Tc3l0&callback=setupMap"></script>
+	<script language="JavaScript">
+		var marker;
+		function initMap() { 
+			
+			var myCenter = new google.maps.LatLng(13.871187,100.589865);
+			var myOptions = {
+				zoom: 11,
+				center: myCenter,
+				//mapTypeId: google.maps.MapTypeId.HYBRID
+			};
+			var map = new google.maps.Map(document.getElementById('map_canvas'),
+				myOptions);
+			
+			// marker
+			<?php
+				$sql="SELECT * FROM pole";
+				$result=mysqli_query($db,$sql);
+				if(mysqli_num_rows($result) > 0){
+					$i=0;
+					while($row = mysqli_fetch_array($result)){
+						$i++;
+						$info = '<a href="./pole.php?ran='.$ran.'&pole_name='.$row['pole_name'].'">'.$row['pole_name'].'</a>';
+						echo "var pos{$i} = {lat: ".$row['pole_lat'].", lng: ".$row['pole_lon']."};";
+						echo "
+							var marker{$i} = new google.maps.Marker({
+								map,
+								position: pos{$i},
+								animation: google.maps.Animation.DROP,
+							});
+						";
+						
+						echo "
+							var infowindow{$i} = new google.maps.InfoWindow({
+								content:'".$info."'
+							});
+						";
+
+						echo "
+							google.maps.event.addListener(marker{$i},'click',function(){
+								infowindow{$i}.open(map,marker{$i});
+							});
+						";
+					}
+				}
+			?>
+		}
+
+	</script>
+
 </head>
-<body>
+<body onload="initMap()">
 	<div class="wrapper">
 		<div class="main-header">
 			<!-- logo  -->
@@ -81,9 +130,7 @@
 										Map of the distribution of users around the world</p>
 									</div>
 									<div class="card-body">
-										<iframe target="_blank" src="http://mkss.co.th/pole/php/map.php?ran=".$ran."" width="100%" height="500" style="border:none;">
-										</iframe>
-										
+										<div id="map_canvas" style="height:450px;"></div>
 									</div>
 								</div>
 							</div>							

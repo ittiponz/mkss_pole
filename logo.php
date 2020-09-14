@@ -1,5 +1,5 @@
     <div class="logo-header">
-        <a href="dash.php" class="logo">
+        <a href="dash.php?ran=<?php echo $ran;?>" class="logo">
             <img align ='center' width="180" height="60"src="assets/img/tot-inno.png">	
         </a>
         <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">

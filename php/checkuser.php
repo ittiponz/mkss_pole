@@ -1,7 +1,6 @@
 <?php
     if(isset($_GET['ran'])){$ran=$_GET['ran'];}else{$ran="xxx";}
     if(isset($_POST['ran'])){$ran=$_POST['ran'];}
-    if(isset($_GET['web'])){$web=$_GET['web'];}else{$web="";}
     
     $sqlx="SELECT * FROM user WHERE usr_ran='".$ran."';";
     $result=mysqli_query($db, $sqlx); 
