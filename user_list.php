@@ -15,59 +15,21 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
 	<link rel="stylesheet" href="assets/css/ready.css">
 	<link rel="stylesheet" href="assets/css/demo.css">
-
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO0ZcyhJ9ZuCpC0p4Gst82f1Bru7Tc3l0&callback=setupMap"></script>
-	<script language="JavaScript">
-		var marker;
-		function initMap() { 
-			
-			var myCenter = new google.maps.LatLng(13.971187,100.589865);
-			var myOptions = {
-				zoom: 10,
-				center: myCenter,
-				//mapTypeId: google.maps.MapTypeId.HYBRID
-			};
-			var map = new google.maps.Map(document.getElementById('map_canvas'),
-				myOptions);
-			
-			// marker
-			<?php
-				$sql="SELECT * FROM pole";
-				$result=mysqli_query($db,$sql);
-				if(mysqli_num_rows($result) > 0){
-					$i=0;
-					while($row = mysqli_fetch_array($result)){
-						$i++;
-						$info = '<a href="./pole.php?ran='.$ran.'&pole_name='.$row['pole_name'].'">'.$row['pole_name'].'</a>';
-						echo "var pos{$i} = {lat: ".$row['pole_lat'].", lng: ".$row['pole_lon']."};";
-						echo "
-							var marker{$i} = new google.maps.Marker({
-								map,
-								position: pos{$i},
-								animation: google.maps.Animation.DROP,
-							});
-						";
-						
-						echo "
-							var infowindow{$i} = new google.maps.InfoWindow({
-								content:'".$info."'
-							});
-						";
-
-						echo "
-							google.maps.event.addListener(marker{$i},'click',function(){
-								infowindow{$i}.open(map,marker{$i});
-							});
-						";
-					}
-				}
-			?>
-		}
-
-	</script>
-
 </head>
-<body onload="initMap()">
+<script language="JavaScript">
+	function onDelete()
+	{
+		if(confirm('User has been successfully Deleted.')==true)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+</script>
+<body>
 	<div class="wrapper">
 		<div class="main-header">
 			<!-- logo  -->
@@ -80,24 +42,71 @@
 			<div class="main-panel">
 				<div class="content">
 					<div class="container-fluid">
-						<h4 class="page-title">Commu. Pole</h4>
-						<!-- sumary stat //start -->
-						<?php include("sumstat.php");?>
+						
 						<div class="row">
+							
 							<div class="col-md-12">
 								<div class="card">
 									<div class="card-header">
-										<h4 class="card-title">Smart Pole Map</h4>
-									<!--	<p class="card-category">
-										Map of Thailand pole</p> -->
+										<h4 class="card-title">User Setting</h4>
+									
 									</div>
 									<div class="card-body">
-										<div id="map_canvas" style="height:450px;"></div>	
-									</div>
+										<h4 class="card-title">User List</h4>
+										
+																				
+										<!--	 <a href="ploe_setting.php?ran=$ran">Add</a> -->
+									<?php	echo "	<a href=\"add_user.php?ran=".$ran."\">AddUser</a>"; ?>
+										<table class="table table-striped mt-3">
+											<thead>
+												<tr>
+													
+													<th scope="col">Name</th>
+													<th scope="col">Status</th>
+													<th scope="col">Delete</th>
+												</tr>
+											</thead>
+											<tbody>
+
+													<?php
+													//&#3652;&#3615;&#3621;&#3660;&#3648;&#3594;&#3639;&#3656;&#3629;&#3617;&#3605;&#3656;&#3629;&#3585;&#3633;&#3610; database &#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3652;&#3604;&#3657;&#3626;&#3619;&#3657;&#3634;&#3591;&#3652;&#3623;&#3657;&#3585;&#3656;&#3629;&#3609;&#3627;&#3609;&#3657;&#3634;&#3609;&#3657;&#3637;
+
+													$sql="SELECT * FROM user ";			
+													$result=mysqli_query($db,$sql); 
+													// echo $sql;
+													if(mysqli_num_rows($result) > 0){
+														while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+														$usr_id=$row['usr_id'];
+														$usr_name=$row['usr_name'];
+														$usr_type=$row['usr_type'];
+														
+													
+														echo "<tr>";
+															
+															echo "<td><a href=\"user_edit.php?ran=".$ran."&usr_id=".$usr_id."\">".$row['usr_name'] ."</a></td>\n";
+															echo "<td>" .$row['usr_type'] .  "</td> ";
+															echo "<td><a href=\"user_delete.php?ran=".$ran."&usr_id=".$usr_id."\">Delete</a></td>\n";
+																	
+														} 
+													}
+													?>
+												</tr>
+											</tbody>
+										</table>
+										
+									<!--	<div class="card-action">
+											<button class="btn btn-success">Submit</button>
+											<button class="btn btn-danger">Cancel</button>
+										</div>	-->
+									</div>	
 								</div>
-							</div>							
-						</div>
-					</div>
+							</div>
+						</div>	
+									
+						
+						
+						
+					
 				</div>
 			</div>
 				<!-- footer -->

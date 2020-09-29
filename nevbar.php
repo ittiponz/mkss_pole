@@ -28,7 +28,8 @@
                             </li>
                         
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
+							
+                            <a class="dropdown-item" href="user_edit.php?ran=<?=$ran;?>&usr_id=<?=$usr_id;?>"><i class="ti-settings"></i> Account Setting</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="login.php"><i class="fa fa-power-off"></i> Logout</a>
                         </ul>

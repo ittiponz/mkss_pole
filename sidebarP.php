@@ -9,7 +9,7 @@
             <ul class="nav">
                 <li class="nav-item <?php echo $pd;?>">
                     <?php	
-                        echo "	<a href=\"dash.php?ran=".$ran."\">"; 
+                        echo "	<a href=\"user_list.php?ran=".$ran."\">"; 
                         echo "	<i class=\"la la-users\"></i>";
                         echo "	User";
                         echo "	</a>";
@@ -17,7 +17,7 @@
                 </li>
                 <li class="nav-item <?php echo $pr;?>">
                     <?php	
-                        echo "	<a href=\"report.php?ran=".$ran."\">"; 
+                        echo "	<a href=\"report_form.php?ran=".$ran."\">"; 
                         echo "	<i class=\"la la-newspaper-o\"></i>";
                         echo "	Report";
                         echo "	</a>";
@@ -25,7 +25,7 @@
                 </li>
                 <li class="nav-item <?php echo $ps;?>">
                     <?php	
-                        echo "	<a href=\"#\">"; 
+                        echo "	<a href=\"pole_set.php?ran=".$ran."&pole_id=".$pole_id."\">";
                         echo "	<i class=\"la la-keyboard-o\"></i>";
                         echo "	Pole Setting";
                         echo "	</a>";

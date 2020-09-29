@@ -48,8 +48,8 @@
 															
 														</div>
 																								
-															 <a href="add_setting.php">Add</a>
-														
+														<!--	 <a href="ploe_setting.php?ran=$ran">Add</a> -->
+													<?php	echo "	<a href=\"pole_add.php?ran=".$ran."\">Add</a>"; ?>
 														<table class="table table-striped mt-3">
 															<thead>
 																<tr>
@@ -74,11 +74,11 @@
 																		$pole_stat=$row['pole_stat'];
 																		
 																	
-																		echo "<tr>";   
+																		echo "<tr>";
 																			echo "<td>" .$row['pole_id'] .  "</td> ";
-																			echo "<td>" .$row['pole_name'] .  "</td> ";
+																			echo "<td><a href=\"pole_setting.php?ran=".$ran."&pole_id=".$pole_id."\">".$row['pole_name'] ."</a></td>\n";
 																			echo "<td>" .$row['pole_stat'] .  "</td> ";
-																			echo "<td><a href=\"delete.php?pole_id=".$pole_id."\">Delete</a></td>\n";
+																			echo "<td><a href=\"pole_delete.php?ran=".$ran."&pole_id=".$pole_id."\">Delete</a></td>\n";
 																					
 																		} 
 																	}
@@ -87,10 +87,10 @@
 															</tbody>
 														</table>
 														
-														<div class="card-action">
+													<!--	<div class="card-action">
 															<button class="btn btn-success">Submit</button>
 															<button class="btn btn-danger">Cancel</button>
-														</div>	
+														</div>	-->
 													</div>	
 												</div>
 											</div>

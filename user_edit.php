@@ -3,9 +3,9 @@
 	
 	include("php/checkuser.php");
 	include("php/function.php");
-	$p="setting";
-	if(isset($_GET['pole_id'])){$pole_id=$_GET['pole_id'];}
-    if(isset($_POST['pole_id'])){$pole_id=$_POST['pole_id'];}
+	$p="dash";
+	if(isset($_GET['usr_id'])){$usr_id=$_GET['usr_id'];}
+    if(isset($_POST['usr_id'])){$usr_id=$_POST['usr_id'];}
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,7 +37,7 @@
 							<div class="col-md-12">
 								<div class="card">
 									<div class="card-header">
-										<h4 class="card-title">Pole Setting</h4>
+										<h4 class="card-title">User Setting</h4>
 									
 									</div>
 									
@@ -45,67 +45,58 @@
 											<?php
 												//&#3652;&#3615;&#3621;&#3660;&#3648;&#3594;&#3639;&#3656;&#3629;&#3617;&#3605;&#3656;&#3629;&#3585;&#3633;&#3610; database &#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3652;&#3604;&#3657;&#3626;&#3619;&#3657;&#3634;&#3591;&#3652;&#3623;&#3657;&#3585;&#3656;&#3629;&#3609;&#3627;&#3609;&#3657;&#3634;&#3609;&#3657;&#3637;
 
-												$sql="SELECT * FROM pole where pole_id='$pole_id'";			
+												$sql="SELECT * FROM user where usr_id='$usr_id'";			
 												$result=mysqli_query($db,$sql); 
 												// echo $sql;
 												if(mysqli_num_rows($result) > 0){
 													while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-													$pole_name=$row['pole_name'];
-													$pole_stat=$row['pole_stat'];
-													$pole_lat=$row['pole_lat'];
-													$pole_lon=$row['pole_lon'];
-													$pole_add=$row['pole_add'];
-													
+													$usr_name=$row['usr_name'];
+													$usr_pwd=$row['usr_pwd'];
+													$usr_type=$row['usr_type'];
+													$usr_id=$row['usr_id'];
+												
 													}
 													
 												}
 												
 											?>
-											<form id="edit_form" name="edit_form" method="post" action="pole_edit.php">
+											<form id="edit_form" name="edit_form" method="post" action="edit_user.php">
 											<input type="hidden" name="ran" id="ran" value="<?php echo $ran;?>">
-											<input type="hidden" name="pole_id" id="pole_id" value="<?php echo $pole_id;?>">
-											<input type="hidden" name="pole_name" id="pole_name" value="<?php echo $pole_name;?>">
-											<input type="hidden" name="pole_stat" id="pole_stat" value="<?php echo $pole_stat;?>">
-											<input type="hidden" name="pole_lat" id="pole_lat" value="<?php echo $pole_lat;?>">
-											<input type="hidden" name="pole_lon" id="pole_lon" value="<?php echo $pole_lon;?>">
-											<input type="hidden" name="pole_add" id="pole_add" value="<?php echo $pole_add;?>">
+											<input type="hidden" name="usr_id" id="usr_id" value="<?php echo $usr_id;?>">
+											<input type="hidden" name="usr_name" id="usr_name" value="<?php echo $usr_name;?>">
+											<input type="hidden" name="usr_pwd" id="usr_pwd" value="<?php echo $usr_pwd;?>">
+											<input type="hidden" name="usr_type" id="usr_type" value="<?php echo $usr_type;?>">
+											<div class="form-group form-inline">
+											<label for="inlineinput" class="col-md-3 col-form-label">User Name</label>
+											<div class="col-md-9 p-0">
+												<input type="text" class="form-control input-full" id="usr_name" name="usr_name" placeholder="N/A"
+												<?php echo " value=\"". $usr_name ."\"";?> />
+											</div>
+											<label for="inlineinput" class="col-md-3 col-form-label">User Password</label>
+											<div class="col-md-9 p-0">
+												<input type="text" class="form-control input-full" id="usr_pwd" name="usr_pwd" placeholder="N/A"
+												<?php echo " value=\"". $usr_pwd ."\"";?> />
+											</div>
+											<label for="inlineinput" class="col-md-3 col-form-label">User Type</label>
+											<div class="col-md-9 p-0">
+												<input type="text" class="form-control input-full" id="usr_type" name="usr_type" placeholder="N/A"
+												<?php echo " value=\"". $usr_type ."\"";?> />
+											</div>
 											
-													<div class="form-group form-inline">
-													<label for="inlineinput" class="col-md-3 col-form-label">Pole Name</label>
-													<div class="col-md-9 p-0">
-														<input type="text" class="form-control input-full" id="pole_name" name="pole_name" placeholder="N/A"
-														<?php echo " value=\"". $pole_name ."\"";?> />
-													</div>
-													<label for="inlineinput" class="col-md-3 col-form-label">Pole Status</label>
-													<div class="col-md-9 p-0">
-														<input type="text" class="form-control input-full" id="pole_stat" name="pole_stat" placeholder="N/A"
-														<?php echo " value=\"". $pole_stat ."\"";?> />
-													</div>
-													<label for="inlineinput" class="col-md-3 col-form-label">Latitude</label>
-													<div class="col-md-9 p-0">
-														<input type="text" class="form-control input-full" id="pole_lat" name="pole_lat" placeholder="ON Buzzer" 
-														<?php echo " value=\"". $pole_lat ."\"";?> />
-													</div>
-													<label for="inlineinput" class="col-md-3 col-form-label">Longtitude</label>
-													<div class="col-md-9 p-0">
-														<input type="text" class="form-control input-full" id="pole_lon" name="pole_lon" placeholder="ON Buzzer" 
-														<?php echo " value=\"". $pole_lon ."\"";?> />
-													</div>
-													<label for="inlineinput" class="col-md-3 col-form-label">Address</label>
-													<div class="col-md-9 p-0">
-														<input type="text" class="form-control input-full" id="pole_add" name="pole_add" placeholder="192.168.1.43" 
-														<?php echo " value=\"". $pole_add ."\"";?> />
-													</div>
-													
-												</div>
-				
-												<div class="card-action">
-													<button type="submit" name="save" class="btn btn-success">Submit</button>
-												<!--	<button class="btn btn-danger">Cancel</button> -->
-													<input type="button" name="year" class="btn btn-danger" value="Cancel"
-													onclick="window.location='dash.php?ran=<?=$ran;?>'"/>
-												</div>
+											
+											<div class="card-action">
+											<button type="submit" name="save" class="btn btn-success">Submit</button>
+										<!--	<button class="btn btn-danger">Cancel</button> -->
+											<input type="button" name="year" class="btn btn-danger" value="Cancel"
+											onclick="window.location='dash.php?ran=<?=$ran;?>'"/>
+											</div>
+										
 											</form>
+											
+										</div>
+		
+										
+
 									</div>	
 								</div>
 							</div>
