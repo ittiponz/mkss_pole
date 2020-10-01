@@ -59,11 +59,11 @@
 									<?php	echo "	<a href=\"add_user.php?ran=".$ran."\">AddUser</a>"; ?>
 										<table class="table table-striped mt-3">
 											<thead>
-												<tr>
+												<tr >
 													
 													<th scope="col">Name</th>
 													<th scope="col">Status</th>
-													<th scope="col">Delete</th>
+													<th scope="col"><i class="la la-trash" style="font-size:24px"></i></th>
 												</tr>
 											</thead>
 											<tbody>

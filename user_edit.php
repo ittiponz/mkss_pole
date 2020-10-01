@@ -67,33 +67,48 @@
 											<input type="hidden" name="usr_pwd" id="usr_pwd" value="<?php echo $usr_pwd;?>">
 											<input type="hidden" name="usr_type" id="usr_type" value="<?php echo $usr_type;?>">
 											<div class="form-group form-inline">
-											<label for="inlineinput" class="col-md-3 col-form-label">User Name</label>
-											<div class="col-md-9 p-0">
-												<input type="text" class="form-control input-full" id="usr_name" name="usr_name" placeholder="N/A"
-												<?php echo " value=\"". $usr_name ."\"";?> />
-											</div>
-											<label for="inlineinput" class="col-md-3 col-form-label">User Password</label>
-											<div class="col-md-9 p-0">
-												<input type="text" class="form-control input-full" id="usr_pwd" name="usr_pwd" placeholder="N/A"
-												<?php echo " value=\"". $usr_pwd ."\"";?> />
-											</div>
-											<label for="inlineinput" class="col-md-3 col-form-label">User Type</label>
-											<div class="col-md-9 p-0">
-												<input type="text" class="form-control input-full" id="usr_type" name="usr_type" placeholder="N/A"
-												<?php echo " value=\"". $usr_type ."\"";?> />
-											</div>
+												<label for="inlineinput" class="col-md-3 col-form-label">User Name</label>
+												<div class="col-md-9 p-0">
+													<input type="text" class="form-control input-full" id="usr_name" name="usr_name" placeholder="N/A"
+													<?php echo " value=\"". $usr_name ."\"";?> />
+												</div>
+												<label for="inlineinput" class="col-md-3 col-form-label">User Password</label>
+												<div class="col-md-9 p-0">
+													<input type="text" class="form-control input-full" id="usr_pwd" name="usr_pwd" placeholder="N/A"
+													<?php echo " value=\"". $usr_pwd ."\"";?> />
+												</div>
+												<label for="inlineinput" class="col-md-3 col-form-label">User Type</label>
+												<div class="col-md-9 p-0">
+													<select class="form-control input-full" id="usr_type" name = "usr_type" >	
+														<?php 
+														echo "<option value=\"admin\"";						
+																if($usr_type == "admin"){
+																if($usr_type  == "admin"){echo " selected ";}	}							
+																		echo ">Admin</option>";	
+														echo "<option value=\"user\"";						
+																if($usr_type == "user"){
+																if($usr_type == "user"){echo " selected ";}	}							
+																		echo ">User</option>";	
+														echo "<option value=\"other\"";						
+																if($usr_type == "other"){
+																if($usr_type  == "other"){echo " selected ";}	}							
+																		echo ">Other</option>";	
+																							
+														?>           
+													</select>
+												</div>
 											
+												<div class="col-md-12 p-0">
+													<div class="card-action" align="center">
+													<button type="submit" name="save" class="btn btn-success">Submit</button>
+													<input type="button" name="year" class="btn btn-danger" value="Cancel"
+													onclick="window.location='dash.php?ran=<?=$ran;?>'"/>
+													</div>
+												</div>
 											
-											<div class="card-action">
-											<button type="submit" name="save" class="btn btn-success">Submit</button>
-										<!--	<button class="btn btn-danger">Cancel</button> -->
-											<input type="button" name="year" class="btn btn-danger" value="Cancel"
-											onclick="window.location='dash.php?ran=<?=$ran;?>'"/>
+												</form>
+											
 											</div>
-										
-											</form>
-											
-										</div>
 		
 										
 

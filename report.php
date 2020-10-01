@@ -228,7 +228,7 @@ $date = $_POST['daterange'];  // value &#3607;&#3637;&#3656;&#3626;&#3656;&#3591
 		</div>
 	</div>
 </body>
-<!-- <script src="assets/js/core/jquery.3.2.1.min.js"></script> -->
+<script src="assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 <script src="assets/js/core/popper.min.js"></script>
 <script src="assets/js/core/bootstrap.min.js"></script>
