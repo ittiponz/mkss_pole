@@ -25,6 +25,6 @@
 		echo "alert(\"User has been successfully Added.\");";
 		//echo " location:dash.php?ran=$ran";
 		echo "</script>";
-		header("location:dash.php?ran=$ran"); 
+		header("location:user_list.php?ran=$ran"); 
 		
 ?>

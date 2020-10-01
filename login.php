@@ -1,4 +1,5 @@
 <?php
+  session_unset();
 	include("php/config.php");
 	if(isset($_GET['ran'])){
 		$ran=$_GET['ran'];

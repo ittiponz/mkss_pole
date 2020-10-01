@@ -25,6 +25,11 @@ $date = $_POST['daterange'];  // value &#3607;&#3637;&#3656;&#3626;&#3656;&#3591
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
 	<link rel="stylesheet" href="assets/css/ready.css">
 	<link rel="stylesheet" href="assets/css/demo.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.css"/>
+ 	
+
+	
 	
 
 	<style>
@@ -99,7 +104,7 @@ $date = $_POST['daterange'];  // value &#3607;&#3637;&#3656;&#3626;&#3656;&#3591
 														<div class="gauge" id="chart_Humid" width="20%"></div>
 														<div class="gauge" id="chart_PM" width="20%"></div>
 														</div>
-														<table class="table table-striped mt-3">
+														<table id="example" class="display">
 															<thead>
 																<tr>
 																	<th scope="col">Temp</th>
@@ -209,6 +214,7 @@ $date = $_POST['daterange'];  // value &#3607;&#3637;&#3656;&#3626;&#3656;&#3591
 														</table>
 														
 														
+														
 													</div>	
 												</div>
 											</div>
@@ -222,7 +228,7 @@ $date = $_POST['daterange'];  // value &#3607;&#3637;&#3656;&#3626;&#3656;&#3591
 		</div>
 	</div>
 </body>
-<script src="assets/js/core/jquery.3.2.1.min.js"></script>
+<!-- <script src="assets/js/core/jquery.3.2.1.min.js"></script> -->
 <script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 <script src="assets/js/core/popper.min.js"></script>
 <script src="assets/js/core/bootstrap.min.js"></script>
@@ -235,6 +241,8 @@ $date = $_POST['daterange'];  // value &#3607;&#3637;&#3656;&#3626;&#3656;&#3591
 <script src="assets/js/plugin/chart-circle/circles.min.js"></script>
 <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 <script src="assets/js/ready.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.js"></script>
 <script>
 google.charts.load('current', {
   packages: ['gauge']
@@ -378,5 +386,8 @@ google.charts.load('current', {
 			time: 1000,
 		});
 	});
+	$(document).ready(function() {
+    $('#example').DataTable();
+} );
 </script>
 </html>

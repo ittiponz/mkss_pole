@@ -1,4 +1,7 @@
-<?php	
+<?php
+	session_start();
+	session_id();
+
 	include("php/config.php");
 	include("php/function.php");
 	$infostr="";
@@ -7,6 +10,9 @@
 		
 		$usr_name=$_POST['user_name'];
 		$pwd=$_POST['password'];
+		
+		$_SESSION['username']= $usr_name;
+
 		$sql="select * from user where usr_name='". $usr_name. "' AND usr_pwd='". $pwd ."';";
 					
 		$result=mysqli_query($db,$sql);			
@@ -16,6 +22,8 @@
 			$usr_type=$row['usr_type'];
 			$login_sucess=true;	
 			$ran=get_ran10();
+			$_SESSION['user_id']= $usr_id;
+			$_SESSION['ran']= $ran;
 
 			$sql="update user SET ".
 					" usr_ran='". $ran ."'".

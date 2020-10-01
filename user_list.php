@@ -85,7 +85,8 @@
 															
 															echo "<td><a href=\"user_edit.php?ran=".$ran."&usr_id=".$usr_id."\">".$row['usr_name'] ."</a></td>\n";
 															echo "<td>" .$row['usr_type'] .  "</td> ";
-															echo "<td><a href=\"user_delete.php?ran=".$ran."&usr_id=".$usr_id."\">Delete</a></td>\n";
+															echo "<td><a href='user_delete.php?ran=".$ran."&usr_id=".$usr_id."' onclick='return confirm(\"Are you sure to delete user => ".$usr_name." ?\")' type='button' class='btn btn-outline-danger btn-sm'>Delete</a></td>\n";
+															//echo "<td><a href=\"user_delete.php?ran=".$ran."&usr_id=".$usr_id."\">Delete</a></td>\n";
 																	
 														} 
 													}
@@ -128,6 +129,7 @@
 <script src="assets/js/plugin/chart-circle/circles.min.js"></script>
 <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 <script src="assets/js/ready.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
 	$('#displayNotif').on('click', function(){
 		var placementFrom = $('#notify_placement_from option:selected').val();

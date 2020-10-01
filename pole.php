@@ -80,7 +80,7 @@
 									</div>
 									<div class="card-body">
 									<div class="row">
-										 <div class="col-sm-3" align="center">
+										 <div class="col-md-3 col-sm-12" align="center">
 											<?php 
 											$sqli="SELECT * FROM log where log_pole_id='$pole_id' ORDER BY log.log_dt DESC";
 											$result = mysqli_query($db,$sqli);  
@@ -115,11 +115,10 @@
 										
 										<?php } ?>
 										</div>
-										<div class="col-sm-4" align="center">
+										<div class="col-md-4 col-sm-12" align="center">
 											<img src="assets/img/pole_02.png" width="60%">
 										</div>
-										<div class="col-sm-2">
-											<?php
+										<?php
 												//&#3652;&#3615;&#3621;&#3660;&#3648;&#3594;&#3639;&#3656;&#3629;&#3617;&#3605;&#3656;&#3629;&#3585;&#3633;&#3610; database &#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3652;&#3604;&#3657;&#3626;&#3619;&#3657;&#3634;&#3591;&#3652;&#3623;&#3657;&#3585;&#3656;&#3629;&#3609;&#3627;&#3609;&#3657;&#3634;&#3609;&#3657;&#3637;
 
 												$sql="SELECT * FROM log where log_pole_id='$pole_id' ORDER BY log.log_dt DESC";			
@@ -152,6 +151,8 @@
 												}
 												
 											?>
+										<div class="col-md-2 col-xs-6">
+										
 											<div class="container">
 											             
 											  <table class="table table-borderless">
@@ -165,7 +166,7 @@
 												<tbody align="left">
 													<tr>
 														<td><i class="fas fa-lightbulb" style="font-size:24px;color:#2196F3"></i></td>
-														<td><?php echo $log_led; ?></td>
+														<td style="width: 107px;"><?php echo $log_led; ?></td>
 													</tr>
 													<tr>
 														<td><i class="fas fa-battery-full" style="font-size:24px;color:green"></i></td>
@@ -209,7 +210,8 @@
 											  </table>
 											</div>
 										</div>
-										<div class="col-sm-2">
+										
+										<div class="col-md-2 col-xs-6">
 											<div class="container">
 											             
 											  <table class="table table-borderless">
@@ -223,7 +225,7 @@
 												<tbody align="left">
 													<tr>													
 														<td><i class="fas fa-desktop" style="font-size:24px;color:#2196F3"></i></td>
-														<td><?php echo $log_led_disp; ?></td>
+														<td style="width: 107px;"><?php echo $log_led_disp; ?></td>
 													</tr>
 													<tr>
 														<td><i class="fas fa-digital-tachograph" style="font-size:24px"></i>(ONU)</td>

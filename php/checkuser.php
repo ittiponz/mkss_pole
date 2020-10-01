@@ -1,4 +1,7 @@
 <?php
+    session_start();
+    $usr_id = $_SESSION['user_id'];
+
     if(isset($_GET['ran'])){$ran=$_GET['ran'];}else{$ran="xxx";}
     if(isset($_POST['ran'])){$ran=$_POST['ran'];}
     

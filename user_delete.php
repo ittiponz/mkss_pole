@@ -11,7 +11,7 @@
 		if(isset($_POST['usr_id'])){$usr_id=$_POST['usr_id'];} 
 		
 		$sql="Delete from user where usr_id='$usr_id'";
-		//$result=mysqli_query($db,$sql); 
+		$result=mysqli_query($db,$sql); 
 		//echo $sql;
        // 
 		// === Alert ===
@@ -19,6 +19,6 @@
 		echo "alert(\"User has been successfully Added.\");";
 		//echo " location:dash.php?ran=$ran";
 		echo "</script>";
-		header("location:dash.php?ran=$ran"); 
+		header("location:user_list.php?ran=$ran"); 
 		
 ?>
