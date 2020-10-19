@@ -74,27 +74,35 @@ $date = $_POST['daterange'];  // value &#3607;&#3637;&#3656;&#3626;&#3656;&#3591
 													$month = substr($date_explode[1],4,2);
 													$year = substr($date_explode[1],7,4);
 													$dt_stp = $year."-".$month."-".$day;
+													$set_Date = substr($now,8,2);
+													$set_Month = substr($now,5,2);
+													$set_Year = substr($now,0,4);
+													$sql_day = $set_Year."-".$set_Month."-".$set_Date;
+													$sql_monthS = $set_Year."-".$set_Month."-01";
+													$sql_monthE = $set_Year."-".$set_Month."-31";
+													$sql_yaerS = $set_Year."-01-01";
+													$sql_yaerE = $set_Year."-12-31";
 													
 													if($date != ""){
 														
-														echo "Date Start: ". $dt_srt."<br />"; // 1 &#3588;&#3656;&#3634;&#3627;&#3621;&#3633;&#3591; '-'	
+														echo "Date Start: ". $dt_srt." <br />"; // 1 &#3588;&#3656;&#3634;&#3627;&#3621;&#3633;&#3591; '-'	
 														echo "Dete Stop: ". $dt_stp."<br />"; // 1 &#3588;&#3656;&#3634;&#3627;&#3621;&#3633;&#3591; '-'	
 													}elseif($date_day != ""){
 														echo"<h4>Daily</h4>";
-														echo "Date Start: ". $date_day."<br />"; // 1 &#3588;&#3656;&#3634;&#3627;&#3621;&#3633;&#3591; '-'	
-														echo "Dete Stop: ". $now."<br />";
+														echo "Date Start: ". $date_day." 00:00:00<br />"; // 1 &#3588;&#3656;&#3634;&#3627;&#3621;&#3633;&#3591; '-'	
+														echo "Dete Stop: ". $now." 23:59:59<br />";
 													}elseif($date_week != ""){
 														echo"<h4>Weekly</h4>";
 														echo "Date Start: ".$date_week."<br />"; // 1 &#3588;&#3656;&#3634;&#3627;&#3621;&#3633;&#3591; '-'	
 														echo "Dete Stop: ". $now."<br />";
 													}elseif($date_mounth != ""){
 														echo"<h4>Monthly</h4>";
-														echo "Date Start: ". $date_mounth."<br />"; // 1 &#3588;&#3656;&#3634;&#3627;&#3621;&#3633;&#3591; '-'	
-														echo "Dete Stop: ". $now."<br />";
+														echo "Date Start: ".$sql_monthS."<br />"; // 1 &#3588;&#3656;&#3634;&#3627;&#3621;&#3633;&#3591; '-'	
+														echo "Dete Stop: ". $sql_monthE."<br />";
 													}elseif($date_year != ""){
 														echo"<h4>Yearly</h4>";
-														echo "Date Start: ". $date_year."<br />"; // 1 &#3588;&#3656;&#3634;&#3627;&#3621;&#3633;&#3591; '-'	
-														echo "Dete Stop: ". $now."<br />";
+														echo "Date Start: ". $sql_yaerS."<br />"; // 1 &#3588;&#3656;&#3634;&#3627;&#3621;&#3633;&#3591; '-'	
+														echo "Dete Stop: ". $sql_yaerE."<br />";
 													}
 													?>
 													<br>
@@ -129,10 +137,10 @@ $date = $_POST['daterange'];  // value &#3607;&#3637;&#3656;&#3626;&#3656;&#3591
 																		$sql="SELECT * FROM log where log_dt BETWEEN '$date_week 00:00:00' AND '$now 23:59:59' ";
 																		$result=mysqli_query($db,$sql); 
 																	}elseif($date_mounth != ""){
-																		$sql="SELECT * FROM log where log_dt BETWEEN '$date_mounth 00:00:00' AND '$now 23:59:59' ";
+																		$sql="SELECT * FROM log where log_dt BETWEEN '$sql_monthS 00:00:00' AND '$sql_monthE 23:59:59' ";
 																		$result=mysqli_query($db,$sql); 
 																	}elseif($date_year != ""){
-																		$sql="SELECT * FROM log where log_dt BETWEEN '$date_year 00:00:00' AND '$now 23:59:59' ";
+																		$sql="SELECT * FROM log where log_dt BETWEEN '$sql_yaerS 00:00:00' AND '$sql_yaerE 23:59:59' ";
 																		$result=mysqli_query($db,$sql); 
 																	}
 																	// echo $sql;
