@@ -1,3 +1,4 @@
+
 <?php
 	include("php/config.php");
 	include("php/checkuser.php");
@@ -36,8 +37,308 @@
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	
+<style>
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.container .btn1 {
+  position: absolute;
+  top: 53%;
+  left: 21%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 41px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .btn2 {
+  position: absolute;
+  top: 4%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 12px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .btn3 {
+  position: absolute;
+  top: 15%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 15px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .btn4 {
+  position: absolute;
+  top: 24%;
+  left: 41%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 16px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .btn5 {
+  position: absolute;
+  top: 37%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 17px 17px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .btn6 {
+  position: absolute;
+  top: 65%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 15px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .btn7 {
+  position: absolute;
+  top: 79%;
+  left: 41%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 25px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .btn8 {
+  position: absolute;
+  top: 48%;
+  left: 66%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 16px 43px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .btn9 {
+  position: absolute;
+  top: 15%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 15px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .btn10 {
+  position: absolute;
+  top: 5%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 15px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .btn11 {
+  position: absolute;
+  top: 17%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 15px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .btn12 {
+  position: absolute;
+  top: 50%;
+  left: 26%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 16px 43px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .btn13 {
+  position: absolute;
+  top: 54%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 45px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .btn1:hover {
+  background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
+  top: 50%;
+  left: 50%;
+  padding: 150px 150px;
+  
+  
+}
+.container .btn2:hover {
+  background-image: url('http://mkss.co.th/pole/assets/img/alarm-1.png');
+  top: 50%;
+  left: 50%;
+  padding: 150px 150px;
+  
+}
+.container .btn3:hover {
+  background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
+  top: 50%;
+  left: 50%;
+  padding: 150px 150px;
+  
+}
+.container .btn4:hover {
+  background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
+  top: 50%;
+  left: 50%;
+  padding: 150px 150px;
+  
+}
+.container .btn5:hover {
+  background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
+  top: 50%;
+  left: 50%;
+  padding: 150px 150px;
+  
+}
+.container .btn6:hover {
+  background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
+  top: 50%;
+  left: 50%;
+  padding: 150px 150px;
+  
+}
+.container .btn7:hover {
+  background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
+  top: 50%;
+  left: 50%;
+  padding: 150px 150px;
+  
+}
+.container .btn8:hover {
+  background-image: url('http://mkss.co.th/pole/assets/img/solar-2.png');
+  top: 50%;
+  left: 50%;
+  padding: 150px 150px;
+  
+}
+.container .btn9:hover {
+  background-image: url('http://mkss.co.th/pole/assets/img/alarm-1.png');
+  top: 50%;
+  left: 50%;
+  padding: 150px 150px;
+  
+}.container .btn10:hover {
+  background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
+  top: 50%;
+  left: 50%;
+  padding: 150px 150px;
+  
+}
+.container .btn11:hover {
+  background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
+  top: 50%;
+  left: 50%;
+  padding: 150px 150px;
+  
+}
+.container .btn12:hover {
+  background-image: url('http://mkss.co.th/pole/assets/img/solar-2.png');
+  top: 50%;
+  left: 50%;
+  padding: 150px 150px;
+  
+}
+.container .btn13:hover {
+  background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
+  top: 50%;
+  left: 50%;
+  padding: 150px 150px;
+  
+}
+
+</style>	
 </head>
+
 <body>
 		<?php  
 
@@ -80,7 +381,7 @@
 									</div>
 									<div class="card-body">
 									<div class="row">
-										 <div class="col-md-3 col-sm-12" align="center">
+										<div class="col-md-2 col-sm-12" align="center">
 											<?php 
 											$sqli="SELECT * FROM log where log_pole_id='$pole_id' ORDER BY log.log_dt DESC";
 											$result = mysqli_query($db,$sqli);  
@@ -95,29 +396,51 @@
 											}
 										
 										 if($temp_r > 30){?>
-											<i class="fas fa-temperature-high" style="font-size:40px;color:orange"></i>
+											<i class="fas fa-temperature-high" style="font-size:30px;color:orange"></i>
 											<font style="font-size:24px;color:orange"><?php echo $temp_r. "°C"; ?></font>
 											&nbsp; &nbsp; &nbsp;
 										 <?php }elseif($temp_r < 30){?>
-											<i class="fas fa-temperature-low" style="font-size:40px;color:blue"></i>
+											<i class="fas fa-temperature-low" style="font-size:30px;color:blue"></i>
 											<font style="font-size:24px;color:blue"><?php echo $temp_r. "°C"; ?></font>
 											&nbsp; &nbsp; &nbsp;
 										 <?php } ?>
 										 
-										 <?php 
-										 if($hummit > 50){?>
-											<img src="assets/img/rain-icon.png" width="20%">
-										<!--	<p style="font-size:24px;color:blue"><?php //echo $hummit. "%"; ?></p> -->
-										<?php 
-										}elseif($hummit < 50){?>
-											<img src="assets/img/suny-icon.png" width="20%">
-										<!--	<font style="font-size:24px;color:blue"><?php //echo $hummit. "%"; ?></font> -->
+											 <?php 
+											 if($hummit > 50){?>
+												<img src="assets/img/rain-icon.png" width="40px">
+											<!--	<p style="font-size:24px;color:blue"><?php //echo $hummit. "%"; ?></p> -->
+											<?php 
+											}elseif($hummit < 50){?>
+												<img src="assets/img/suny-icon.png" width="40px">
+											<!--	<font style="font-size:24px;color:blue"><?php //echo $hummit. "%"; ?></font> -->
+											
+											<?php } ?>
+										</div>
 										
-										<?php } ?>
+										<div class="col-md-2 col-xs-6" align="center">
+											<div class="container">
+												<img src="assets/img/pole-font.png" width="100%">
+												<button class="btn1" title="Display"></button>
+												<button class="btn2" title="Fire Alarm"></button>
+												<button class="btn3" title="Camera"></button>
+												<button class="btn4" title=""></button>
+												<button class="btn5" title=""></button>
+												<button class="btn6" title="Switch"></button>
+												<button class="btn7" title=""></button>
+												<button class="btn8" title="Solarcell"></button>
+												<button class="btn9" title=""></button>
+											</div>
 										</div>
-										<div class="col-md-4 col-sm-12" align="center">
-											<img src="assets/img/pole_02.png" width="60%">
+										<div class="col-md-2 col-xs-6" align="center">
+											<div class="container">
+												<img src="assets/img/pole-back.png" width="100%">
+												<button class="btn10" title="Fire Alarm"></button>
+												<button class="btn11" title=""></button>
+												<button class="btn12" title="Solarcell"></button>
+												<button class="btn13" title="Display"></button>
+											</div>
 										</div>
+										
 										<?php
 												//&#3652;&#3615;&#3621;&#3660;&#3648;&#3594;&#3639;&#3656;&#3629;&#3617;&#3605;&#3656;&#3629;&#3585;&#3633;&#3610; database &#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3652;&#3604;&#3657;&#3626;&#3619;&#3657;&#3634;&#3591;&#3652;&#3623;&#3657;&#3585;&#3656;&#3629;&#3609;&#3627;&#3609;&#3657;&#3634;&#3609;&#3657;&#3637;
 
@@ -166,7 +489,7 @@
 												<tbody align="left">
 													<tr>
 														<td><i class="fas fa-lightbulb" style="font-size:24px;color:#2196F3"></i></td>
-														<td style="width: 107px;"><?php echo $log_led; ?></td>
+														<td><?php echo $log_led; ?></td>
 													</tr>
 													<tr>
 														<td><i class="fas fa-battery-full" style="font-size:24px;color:green"></i></td>
@@ -181,11 +504,11 @@
 														<td><?php echo $log_switch; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-camera" style="font-size:20px"></i>(1)</td>
+														<td><i class="fas fa-camera" style="font-size:24px;color:black"></i>(1)</td>
 														<td><?php echo $log_cam1; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-camera" style="font-size:24px"></i>(2)</td>
+														<td><i class="fas fa-camera" style="font-size:24px;color:black"></i>(2)</td>
 														<td><?php echo $log_cam2; ?></td>
 													</tr>
 													<tr>
@@ -225,22 +548,22 @@
 												<tbody align="left">
 													<tr>													
 														<td><i class="fas fa-desktop" style="font-size:24px;color:#2196F3"></i></td>
-														<td style="width: 107px;"><?php echo $log_led_disp; ?></td>
+														<td><?php echo $log_led_disp; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-digital-tachograph" style="font-size:24px"></i>(ONU)</td>
+														<td><i class="fas fa-digital-tachograph" style="font-size:24px;color:black"></i>(ONU)</td>
 														<td><?php echo $log_ONU; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-digital-tachograph" style="font-size:24px"></i>(ATA)</td>
+														<td><i class="fas fa-digital-tachograph" style="font-size:24px;color:black"></i>(ATA)</td>
 														<td><?php echo $log_ATA; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-hdd" style="font-size:24px"></i>(IOT)</td>
+														<td><i class="fas fa-hdd" style="font-size:24px;color:black"></i>(IOT)</td>
 														<td><?php echo $log_IOT_GW; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-broadcast-tower" style="font-size:24px"></i></td>
+														<td><i class="fas fa-broadcast-tower" style="font-size:24px;color:green"></i></td>
 														<td><?php echo $log_POE_sw; ?></td>
 													</tr>
 													<tr>
@@ -252,11 +575,11 @@
 														<td><?php echo $log_solar_bat; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-plug" style="font-size:24px"></i></td>
+														<td><i class="fas fa-plug" style="font-size:24px;color:black"></i></td>
 														<td><?php echo $log_AC_PW_in; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-fan" style="font-size:24px"></i></td>
+														<td><i class="fas fa-fan" style="font-size:24px;color:#2196F3"></i></td>
 														<td><?php echo $log_fan; ?></td>
 													</tr>
 												</tbody>
@@ -271,11 +594,6 @@
 							</div>
 							</div>
 						</div>	
-									
-						
-						
-						
-					
 					</div>
 				</div>
 			</div>

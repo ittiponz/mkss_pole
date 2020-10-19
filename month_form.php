@@ -37,6 +37,7 @@
 			<div class="main-panel">
 				<div class="content">
 					<div class="container-fluid">
+						</br></br></br></br></br>
 										<div class="row">
 											
 											<div class="col-md-12">
@@ -47,8 +48,38 @@
 													</div>
 													<div class="card-body">
 														<h4 align="center" class="card-title">Plase Select Date</h4>
+														<br>
+														
+														<div align="center">											
+															<?php  $date_day=date("Y-m-d"); 
+																 //  $date_week=date("Y-m-d");
+																   $date_week = date ("Y-m-d", strtotime("-7 day", strtotime($date_day))); 
+															?>
+															<input type="button" name="day" class="btn btn-info" value="Daily"
+															onclick="window.location='report.php?ran=<?=$ran;?>&date_day=<?=$date_day;?>'"/>
+															<input type="button" name="day" class="btn btn-success" value="Weekly"
+															onclick="window.location='report.php?ran=<?=$ran;?>&date_week=<?=$date_week;?>'"/>
+														   
+															
+														</div>
+													
+														<br>
+														<div align="center">
+															<?php //$date_mounth=date("Y-m-d"); 
+																  // $date_year=date("Y-m-d");
+																   $date_mounth = date ("Y-m-d", strtotime("-1 month", strtotime($date_day)));
+																   $date_year = date ("Y-m-d", strtotime("-1 year", strtotime($date_day))); 																   
+															?>
+															<input type="button" name="mounth" class="btn btn-warning" value="Monthly"
+															onclick="window.location='report.php?ran=<?=$ran;?>&date_mounth=<?=$date_mounth;?>'"/>
+															<input type="button" name="year" class="btn btn-danger" value="Yearly"
+															onclick="window.location='report.php?ran=<?=$ran;?>&date_year=<?=$date_year;?>'"/>
+														
+														</div>
 														<form align="center" width="80%" action="report.php" method="post" accept-charset="utf-8"><br/>
                                                         <input type="hidden" name="ran" id="ran" value="<?php echo $ran;?>">
+														<h4 align="center">OR</h4>
+														<br>
 														<input type="text" name="daterange" placeholder="click" />
 															
 															<script type="text/javascript">

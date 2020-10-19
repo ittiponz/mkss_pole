@@ -78,8 +78,24 @@
 													</div>
 													<label for="inlineinput" class="col-md-3 col-form-label">Pole Status</label>
 													<div class="col-md-9 p-0">
-														<input type="text" class="form-control input-full" id="pole_stat" name="pole_stat" placeholder="N/A"
-														<?php echo " value=\"". $pole_stat ."\"";?> />
+														<select class="form-control input-full" id="pole_stat" name = "pole_stat" >	
+															<?php 
+															echo "<option value=\"online\"";						
+																	if($pole_stat == "online"){
+																	if($pole_stat  == "online"){echo " selected ";}	}							
+																			echo ">Online</option>";	
+															echo "<option value=\"offline\"";						
+																	if($pole_stat == "offline"){
+																	if($pole_stat == "offline"){echo " selected ";}	}							
+																			echo ">Offline</option>";	
+															echo "<option value=\"disable\"";						
+																	if($pole_stat == "disable"){
+																	if($pole_stat  == "disable"){echo " selected ";}	}							
+																			echo ">Disable</option>";	
+																								
+															?>           
+														</select>
+														
 													</div>
 													<label for="inlineinput" class="col-md-3 col-form-label">Latitude</label>
 													<div class="col-md-9 p-0">
@@ -99,11 +115,13 @@
 													
 												</div>
 				
-												<div class="card-action">
-													<button type="submit" name="save" class="btn btn-success">Submit</button>
-												<!--	<button class="btn btn-danger">Cancel</button> -->
-													<input type="button" name="year" class="btn btn-danger" value="Cancel"
-													onclick="window.location='dash.php?ran=<?=$ran;?>'"/>
+												<div class="col-md-12 p-0">
+													<div class="card-action" align="center">
+														<button type="submit" name="save" class="btn btn-success">Submit</button>
+													<!--	<button class="btn btn-danger">Cancel</button> -->
+														<input type="button" name="year" class="btn btn-danger" value="Cancel"
+														onclick="window.location='dash.php?ran=<?=$ran;?>'"/>
+													</div>
 												</div>
 											</form>
 									</div>	

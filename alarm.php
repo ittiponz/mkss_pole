@@ -3,7 +3,7 @@
 	
 	include("php/checkuser.php");
 	include("php/function.php");
-	$p="setting";
+	$p="dash";
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,6 +16,19 @@
 	<link rel="stylesheet" href="assets/css/ready.css">
 	<link rel="stylesheet" href="assets/css/demo.css">
 </head>
+<script language="JavaScript">
+	function onDelete()
+	{
+		if(confirm('User has been successfully Deleted.')==true)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+</script>
 <body>
 	<div class="wrapper">
 		<div class="main-header">
@@ -35,59 +48,75 @@
 							<div class="col-md-12">
 								<div class="card">
 									<div class="card-header">
-										<h4 class="card-title">Add Pole</h4>
+										<h4 class="card-title">Alarm</h4>
 									
 									</div>
-									
 									<div class="card-body">
-											<form align="center" width="80%" action="add_pole.php" method="post" accept-charset="utf-8"><br/>
-											<input type="hidden" name="ran" id="ran" value="<?php echo $ran;?>">
-											<div class="form-group form-inline">
-												<label for="inlineinput" class="col-md-3 col-form-label">Pole Name</label>
-												<div class="col-md-9 p-0">
-													<input type="text" class="form-control input-full" id="pole_name" name="pole_name" placeholder="Comm.P0XX" />
-												</div>
-												
-												<label for="inlineinput" class="col-md-3 col-form-label">Pole Status</label>
-														<div class="col-md-9 p-0">
-															<select class="form-control input-full" id="pole_stat" name = "pole_stat" >	
-																	<option value="online"> Online </option>
-																	<option value="offline"> Offline  </option>
-																	<option value="disable"> Disable </option>         
-															</select>
-														</div>
-												<label for="inlineinput" class="col-md-3 col-form-label">Latitude</label>
-												<div class="col-md-9 p-0">
-													<input type="text" class="form-control input-full" id="pole_lat" name="pole_lat" placeholder="14.XXX" />
-												</div>
-												<label for="inlineinput" class="col-md-3 col-form-label">Longtitude</label>
-												<div class="col-md-9 p-0">
-													<input type="text" class="form-control input-full" id="pole_lon" name="pole_lon" placeholder="100.XXX" />
-												</div>
-												<label for="inlineinput" class="col-md-3 col-form-label">Address</label>
-												<div class="col-md-9 p-0">
-													<input type="text" class="form-control input-full" id="pole_add" name="pole_add" placeholder="Address" />
-												</div>
-											
-												<div class="col-md-12 p-0">
+										<h4 class="card-title">Alarm List</h4>
+									
+										<table class="table table-striped mt-3">
+											<thead>
+												<tr >
 													
-													<div class="card-action" align="center">
-														<button type="submit" name="save" class="btn btn-success">Submit</button>
-													<!--	<button class="btn btn-danger">Cancel</button> -->
-														<input type="button" name="year" class="btn btn-danger" value="Cancel"
-														onclick="window.location='dash.php?ran=<?=$ran;?>'"/>
+													<th scope="col">Pole</th>
+													<th scope="col">Device</th>
+													<th scope="col">Status</th>
+												</tr>
+											</thead>
+											<tbody>
+
+												<?php
+													$sqlx="SELECT * from dev where dev_stat = 'alarm'";
+													$resultx=mysqli_query($db,$sqlx);
+													
+													// echo $sql;
+													if(mysqli_num_rows($resultx) > 0){
+														while($rowx = mysqli_fetch_array($resultx,MYSQLI_ASSOC)){
+															$dev_id=$rowx['dev_id'];
+															$dev_pole=$rowx['dev_pole'];
+															$dev_dev=$rowx['dev_dev'];
+															$dev_stat=$rowx['dev_stat'];
 														
-													</div>
-												</div>
-											</form>
-										</div>
+															$sql="SELECT * from pole where pole_id='$dev_pole'";		
+															$result=mysqli_query($db,$sql);	
+															if(mysqli_num_rows($result) > 0){
+															$row = mysqli_fetch_array($result,MYSQLI_ASSOC);				
+															$pole_name=$row['pole_name'];
+															}
+													
+															$sqly="SELECT * from device where dv_id='$dev_dev'";		
+															$resulty=mysqli_query($db,$sqly);	
+															if(mysqli_num_rows($resulty) > 0){
+															$rowy = mysqli_fetch_array($resulty,MYSQLI_ASSOC);				
+															$dv_type=$rowy['dv_type'];
+															}
+													
+															echo "<tr>";
+															echo "<td><a href=\"dev_edit.php?ran=".$ran."&dev_id=".$dev_id."\">".$row['pole_name'] ."</a></td>\n";
+															echo "<td>" .$rowy['dv_type']. "</td> ";
+															echo "<td>" .$rowx['dev_stat']. "</td> ";
+														} 
+													}
+												?>
+												</tr>
+											</tbody>
+										</table>
+										
+									<!--	<div class="card-action">
+											<button class="btn btn-success">Submit</button>
+											<button class="btn btn-danger">Cancel</button>
+										</div>	-->
 									</div>	
 								</div>
 							</div>
-						</div>
-	
-					</div>
+						</div>	
+									
+						
+						
+						
+					
 				</div>
+			</div>
 				<!-- footer -->
 			<?php include("footer.php"); ?>
 			</div>
@@ -107,6 +136,7 @@
 <script src="assets/js/plugin/chart-circle/circles.min.js"></script>
 <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 <script src="assets/js/ready.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
 	$('#displayNotif').on('click', function(){
 		var placementFrom = $('#notify_placement_from option:selected').val();

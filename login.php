@@ -51,7 +51,7 @@ if(isset($_GET['infostr'])){$infostr=$_GET['infostr'];}
     <div class="col-md-4">
       <h3 align="center">
       <div class="login-logo">
-		  <img src="assets/img/tot-inno.png" height="200" width="222"/>
+		  <img src="assets/img/R_D2.png" height="200" width="222"/>
         <a href="index.php"></a>
       </div><!-- /.login-logo -->
       <br>

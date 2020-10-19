@@ -56,7 +56,7 @@
 																	<th scope="col">ID</th>
 																	<th scope="col">Name</th>
 																	<th scope="col">Status</th>
-																	<th scope="col">Delete</th>
+																	<th scope="col"><i class="la la-trash" style="font-size:24px" align="center"></i></th>
 																</tr>
 															</thead>
 															<tbody>

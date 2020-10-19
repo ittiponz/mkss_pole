@@ -40,43 +40,49 @@
 									</div>
 									
 									<div class="card-body">
-										<form id="add_form" name="add_form" method="post" action="user_add.php">
-											<input type="hidden" name="ran" id="ran" value="<?php echo $ran;?>">
-											<input type="hidden" name="usr_name" id="usr_name" value="<?php echo $usr_name;?>">
-											<input type="hidden" name="usr_pwd" id="usr_pwd" value="<?php echo $usr_pwd;?>">
-											<input type="hidden" name="usr_type" id="usr_type" value="<?php echo $usr_type;?>">
-											<div class="form-group form-inline">
-												<label for="inlineinput" class="col-md-3 col-form-label">User Name</label>
-												<div class="col-md-9 p-0">
-													<input type="text" class="form-control input-full" id="usr_name" name="usr_name"/>
-												</div>
-												<label for="inlineinput" class="col-md-3 col-form-label">User Password</label>
-												<div class="col-md-9 p-0">
-													<input type="password" class="form-control input-full" id="usr_pwd" name="usr_pwd"/>
-												</div>
-												<label for="inlineinput" class="col-md-3 col-form-label">User Type</label>
-												<div class="col-md-9 p-0">
-													<input type="text" class="form-control input-full" id="usr_type" name="usr_type"/>
+											<form id="add_form" name="add_form" method="post" action="user_add.php">
+												<input type="hidden" name="ran" id="ran" value="<?php echo $ran;?>">
+											<!--	<input type="hidden" name="usr_name" id="usr_name" value="<?php //echo $usr_name;?>">
+												<input type="hidden" name="usr_pwd" id="usr_pwd" value="<?php //echo $usr_pwd;?>">
+												<input type="hidden" name="usr_type" id="usr_type" value="<?php // echo $usr_type;?>"> -->
+												<div class="form-group form-inline">
+													<label for="inlineinput" class="col-md-3 col-form-label">User Name</label>
+													<div class="col-md-9 p-0">
+														<input type="text" class="form-control input-full" id="usr_name" name="usr_name"/>
+													</div>
+													<label for="inlineinput" class="col-md-3 col-form-label">User Password</label>
+													<div class="col-md-9 p-0">
+														<input type="password" class="form-control input-full" id="usr_pwd" name="usr_pwd"/>
+													</div>
+													<label for="inlineinput" class="col-md-3 col-form-label">User Type</label>
+													<div class="col-md-9 p-0">
+														<select class="form-control input-full" id="usr_type" name = "usr_type" >	
+																<option value="admin"> Admin </option>
+																<option value="user">  User  </option>
+																<option value="other"> Other </option>         
+														</select>
+													</div>
+													<div class="col-md-12 p-0">
+														<div class="card-action" align="center">
+														<button type="submit" name="save" class="btn btn-success">Submit</button>
+													<!--	<button class="btn btn-danger">Cancel</button> -->
+														<input type="button" name="cancel" class="btn btn-danger" value="Cancel"
+														onclick="window.location='dash.php?ran=<?=$ran;?>'"/>
+														</div>
+													</div>
 												
-											</div>
-			
-											<div class="card-action">
-											<button type="submit" name="save" class="btn btn-success">Submit</button>
-										<!--	<button class="btn btn-danger">Cancel</button> -->
-											<input type="button" name="year" class="btn btn-danger" value="Cancel"
-											onclick="window.location='dash.php?ran=<?=$ran;?>'"/>
-											</div>
-										</form>
+											</form>
 
-									</div>	
+										</div>	
+									</div>
 								</div>
 							</div>
-						</div>
 	
+						</div>
 					</div>
-				</div>
 				<!-- footer -->
 			<?php include("footer.php"); ?>
+				</div>
 			</div>
 		</div>
 	</div>
