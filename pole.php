@@ -245,90 +245,56 @@
   text-align: center;
 }
 .container .btn1:hover {
-  background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
-  top: 50%;
-  left: 50%;
-  padding: 150px 150px;
-  
-  
+  background-color: transparent;
 }
 .container .btn2:hover {
-  background-image: url('http://mkss.co.th/pole/assets/img/alarm-1.png');
-  top: 50%;
-  left: 50%;
-  padding: 150px 150px;
+  background-color: transparent;
   
 }
 .container .btn3:hover {
-  background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
-  top: 50%;
-  left: 50%;
-  padding: 150px 150px;
+  background-color: transparent;
   
 }
 .container .btn4:hover {
-  background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
-  top: 50%;
-  left: 50%;
-  padding: 150px 150px;
+  background-color: transparent;
   
 }
 .container .btn5:hover {
-  background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
-  top: 50%;
-  left: 50%;
-  padding: 150px 150px;
+  background-color: transparent;
   
 }
 .container .btn6:hover {
-  background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
-  top: 50%;
-  left: 50%;
-  padding: 150px 150px;
+  background-color: transparent;
   
 }
 .container .btn7:hover {
-  background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
-  top: 50%;
-  left: 50%;
-  padding: 150px 150px;
+  background-color: transparent;
   
 }
 .container .btn8:hover {
-  background-image: url('http://mkss.co.th/pole/assets/img/solar-2.png');
-  top: 50%;
-  left: 50%;
-  padding: 150px 150px;
+  background-color: transparent;
   
 }
 .container .btn9:hover {
-  background-image: url('http://mkss.co.th/pole/assets/img/alarm-1.png');
-  top: 50%;
-  left: 50%;
-  padding: 150px 150px;
+  background-color: transparent;
   
 }.container .btn10:hover {
-  background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
-  top: 50%;
-  left: 50%;
-  padding: 150px 150px;
+  background-color: transparent;
   
 }
 .container .btn11:hover {
-  background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
-  top: 50%;
-  left: 50%;
-  padding: 150px 150px;
+  background-color: transparent;
   
 }
 .container .btn12:hover {
-  background-image: url('http://mkss.co.th/pole/assets/img/solar-2.png');
-  top: 50%;
-  left: 50%;
-  padding: 150px 150px;
+  background-color: transparent;
   
 }
 .container .btn13:hover {
+  background-color: transparent;
+  
+}
+.container .btn14:hover {
   background-image: url('http://mkss.co.th/pole/assets/img/tot-inno.png');
   top: 50%;
   left: 50%;
@@ -420,24 +386,28 @@
 										<div class="col-md-2 col-xs-6" align="center">
 											<div class="container">
 												<img src="assets/img/pole-font.png" width="100%">
-												<button class="btn1" title="Display"></button>
-												<button class="btn2" title="Fire Alarm"></button>
-												<button class="btn3" title="Camera"></button>
-												<button class="btn4" title=""></button>
-												<button class="btn5" title=""></button>
-												<button class="btn6" title="Switch"></button>
-												<button class="btn7" title=""></button>
-												<button class="btn8" title="Solarcell"></button>
-												<button class="btn9" title=""></button>
+												<button class="btn1" data-toggle="tooltip" title="Display!" ></button>
+												<button class="btn2" data-toggle="tooltip" data-placement="right" 
+												title="Fire Alarm"></button>
+												<button class="btn3" data-toggle="tooltip" data-placement="right" 
+												title="Camera"></button>
+												<button class="btn4" data-toggle="tooltip" title=""></button>
+												<button class="btn5" data-toggle="tooltip" title=""></button>
+												<button class="btn6" data-toggle="tooltip" data-placement="right" 
+												title="Switch"></button>
+												<button class="btn7" data-toggle="tooltip" title=""></button>
+												<button class="btn8" data-toggle="tooltip" title="Solarcell"></button>
+												<button class="btn9" data-toggle="tooltip" title=""></button>
 											</div>
 										</div>
 										<div class="col-md-2 col-xs-6" align="center">
 											<div class="container">
 												<img src="assets/img/pole-back.png" width="100%">
-												<button class="btn10" title="Fire Alarm"></button>
-												<button class="btn11" title=""></button>
-												<button class="btn12" title="Solarcell"></button>
-												<button class="btn13" title="Display"></button>
+												<button class="btn10" data-toggle="tooltip" data-placement="right"
+												 title="Fire Alarm"></button>
+												<button class="btn11" data-toggle="tooltip" title=""></button>
+												<button class="btn12" data-toggle="tooltip" title="Solarcell"></button>
+												<button class="btn13" data-toggle="tooltip" title="Display"></button>
 											</div>
 										</div>
 										
@@ -488,43 +458,53 @@
 												</thead>
 												<tbody align="left">
 													<tr>
-														<td><i class="fas fa-lightbulb" style="font-size:24px;color:#2196F3"></i></td>
+														<td><i class="fas fa-lightbulb" data-toggle="tooltip" data-placement="right" 
+														title="LED" style="font-size:24px;color:#2196F3"></i></td>
 														<td><?php echo $log_led; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-battery-full" style="font-size:24px;color:green"></i></td>
+														<td><i class="fas fa-battery-full" data-toggle="tooltip" data-placement="right" 
+														title="LED Battery" style="font-size:24px;color:green"></i></td>
 														<td><?php echo $log_led_battery; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fa fa-bell" style="font-size:24px;color:red"></i></td>
+														<td><i class="fa fa-bell" data-toggle="tooltip" data-placement="right" 
+														title="FIRE ALARM" style="font-size:24px;color:red"></i></td>
 														<td><?php echo $log_fire_alarm; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-toggle-on" style="font-size:24px;color:#2196F3"></i></td>
+														<td><i class="fas fa-toggle-on" data-toggle="tooltip" data-placement="right" 
+														title="SWITCH" style="font-size:24px;color:#2196F3"></i></td>
 														<td><?php echo $log_switch; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-camera" style="font-size:24px;color:black"></i>(1)</td>
+														<td><i class="fas fa-camera" data-toggle="tooltip" data-placement="right" 
+														title="CAMERA1" style="font-size:24px;color:black"></i>(1)</td>
 														<td><?php echo $log_cam1; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-camera" style="font-size:24px;color:black"></i>(2)</td>
+														<td><i class="fas fa-camera" data-toggle="tooltip" data-placement="right" 
+														title="CAMERA2" style="font-size:24px;color:black"></i>(2)</td>
 														<td><?php echo $log_cam2; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-volume-up" style="font-size:24px;color:#2196F3"></i></td>
+														<td><i class="fas fa-volume-up" data-toggle="tooltip" data-placement="right" 
+														title="SPEAKER" style="font-size:24px;color:#2196F3"></i></td>
 														<td><?php echo $log_spk; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-temperature-high" style="font-size:24px;color:orange"></i></td>
+														<td><i class="fas fa-temperature-high" data-toggle="tooltip" data-placement="right" 
+														title="TEMPERATURE" style="font-size:24px;color:orange"></i></td>
 														<td><?php echo $log_temp; ?> °C</td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-tint" style="font-size:24px;color:#2196F3"></i></td>
+														<td><i class="fas fa-tint" data-toggle="tooltip" data-placement="right" 
+														title="HUMIDITY" style="font-size:24px;color:#2196F3"></i></td>
 														<td><?php echo $log_hum; ?> %</td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-lungs-virus" style="font-size:24px;color:red"></i></td>
+														<td><i class="fas fa-lungs-virus" data-toggle="tooltip" data-placement="right" 
+														title="PM2.5" style="font-size:24px;color:red"></i></td>
 														<td><?php echo $log_pm25; ?> µg./m	</td>
 													</tr>
 													
@@ -547,39 +527,48 @@
 												</thead>
 												<tbody align="left">
 													<tr>													
-														<td><i class="fas fa-desktop" style="font-size:24px;color:#2196F3"></i></td>
+														<td><i class="fas fa-desktop" data-toggle="tooltip" data-placement="right" 
+														title="DISPLAY" style="font-size:24px;color:#2196F3"></i></td>
 														<td><?php echo $log_led_disp; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-digital-tachograph" style="font-size:24px;color:black"></i>(ONU)</td>
+														<td><i class="fas fa-digital-tachograph" 
+														data-toggle="tooltip" data-placement="right" 
+														title="ONU" style="font-size:24px;color:black"></i>(ONU)</td>
 														<td><?php echo $log_ONU; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-digital-tachograph" style="font-size:24px;color:black"></i>(ATA)</td>
+														<td><i class="fas fa-digital-tachograph" data-toggle="tooltip" data-placement="right" title="ATA" style="font-size:24px;color:black"></i>(ATA)</td>
 														<td><?php echo $log_ATA; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-hdd" style="font-size:24px;color:black"></i>(IOT)</td>
+														<td><i class="fas fa-hdd" data-toggle="tooltip" data-placement="right" 
+														title="IOT" style="font-size:24px;color:black"></i>(IOT)</td>
 														<td><?php echo $log_IOT_GW; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-broadcast-tower" style="font-size:24px;color:green"></i></td>
+														<td><i class="fas fa-broadcast-tower" data-toggle="tooltip" data-placement="right" 
+														title="POLE" style="font-size:24px;color:green"></i></td>
 														<td><?php echo $log_POE_sw; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-solar-panel" style="font-size:24px;color:#2196F3"></i></td>
+														<td><i class="fas fa-solar-panel" data-toggle="tooltip" data-placement="right" 
+														title="SOLAR" style="font-size:24px;color:#2196F3"></i></td>
 														<td><?php echo $log_solar_pv; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-car-battery" style="font-size:24px;color:green"></i></td>
+														<td><i class="fas fa-car-battery" data-toggle="tooltip" data-placement="right" 
+														title="SOLAR BATTERY" style="font-size:24px;color:green"></i></td>
 														<td><?php echo $log_solar_bat; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-plug" style="font-size:24px;color:black"></i></td>
+														<td><i class="fas fa-plug" data-toggle="tooltip" data-placement="right" 
+														title="AC POWER IN" style="font-size:24px;color:black"></i></td>
 														<td><?php echo $log_AC_PW_in; ?></td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-fan" style="font-size:24px;color:#2196F3"></i></td>
+														<td><i class="fas fa-fan" data-toggle="tooltip" data-placement="right" 
+														title="FAN" style="font-size:24px;color:#2196F3"></i></td>
 														<td><?php echo $log_fan; ?></td>
 													</tr>
 												</tbody>
@@ -631,6 +620,15 @@
 			</div>
 		</div>
 	</div>
+	
+
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+
 </body>
 <script src="assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>

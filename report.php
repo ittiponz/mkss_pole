@@ -107,10 +107,9 @@ $date = $_POST['daterange'];  // value &#3607;&#3637;&#3656;&#3626;&#3656;&#3591
 													?>
 													<br>
 														<div class="col-md-12" align="center">
-														<script src="https://www.gstatic.com/charts/loader.js"></script>
-														<div class="gauge" id="chart_Temp" width="20%"></div>
-														<div class="gauge" id="chart_Humid" width="20%"></div>
-														<div class="gauge" id="chart_PM" width="20%"></div>
+															<script src="https://www.gstatic.com/charts/loader.js"></script>
+															<div class="gauge" id="line_top_x" width="20%"></div>
+															<div class="gauge" id="line_top_x2" width="20%"></div>
 														</div>
 														<table id="example" class="display">
 															<thead>
@@ -167,9 +166,9 @@ $date = $_POST['daterange'];  // value &#3607;&#3637;&#3656;&#3626;&#3656;&#3591
 																		$log_fan=$row['log_fan'];
 																		
 																		echo "<tr>";
-																			echo "<td>" .$row['log_temp'] .  "</td> ";
-																			echo "<td>" .$row['log_hum'] .  "</td> ";
-																			echo "<td>" .$row['log_pm25'] .  "</td> ";
+																			echo "<td>" .$row['log_temp']/10 .  " °C</td> ";
+																			echo "<td>" .$row['log_hum']/10 .  " %</td> ";
+																			echo "<td>" .$row['log_pm25']/10 .  " ug./m</td> ";
 																			echo "<td>" .$row['log_fire_alarm'] .  "</td> ";
 																					
 																		} 
@@ -255,9 +254,9 @@ $date = $_POST['daterange'];  // value &#3607;&#3637;&#3656;&#3626;&#3656;&#3591
 google.charts.load('current', {
   packages: ['gauge']
 }).then(function () {
-	var hum=<?=$hum?>;
-	var temp=<?=$temp?>;
-	var pm=<?=$pm?>;
+	var hum=<?=$hum/10?>;
+	var temp=<?=$temp/10?>;
+	var pm=<?=$pm/10?>;
   var dataHumid = google.visualization.arrayToDataTable([
     ['Label', 'Value'],
     ['Humid', 0]
@@ -367,6 +366,102 @@ google.charts.load('current', {
   }, 1300);
 });
 </script>
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Day');
+      data.addColumn('number', 'Temp');
+
+      data.addRows([
+		<?php
+			$result2=mysqli_query($db,$sql);
+			if(mysqli_num_rows($result2) > 0){
+				$i=0;
+				$t=0;
+				while($row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC)){
+					$i++;
+					$show_temp=$row2['log_temp']/10;
+					echo "[$i,  $show_temp],";
+					/* if(fmod($i, 60)==0){
+						$t++;
+						echo "[$t,  $show_temp],";
+					} */
+				}
+			}	
+		?>
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Temperature',
+          subtitle: 'degree Celsius (°C)'
+        },
+        width: 450,
+        height: 250,
+        axes: {
+          x: {
+            0: {side: 'bottom'}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('line_top_x'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+  </script>
+  <script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart2);
+
+    function drawChart2() {
+
+      var data2 = new google.visualization.DataTable();
+      data2.addColumn('number', 'Day');
+      data2.addColumn('number', 'PM 2.5');
+
+      data2.addRows([
+        <?php
+			$result3=mysqli_query($db,$sql);
+			if(mysqli_num_rows($result3) > 0){
+				$i=0;
+				$t=0;
+				while($row2 = mysqli_fetch_array($result3,MYSQLI_ASSOC)){
+					$i++;
+					$show_pm25=$row2['log_pm25']/10;
+					echo "[$i,  $show_pm25],";
+					/* if(fmod($i, 60)==0){
+						$t++;
+						echo "[$t,  $show_temp],";
+					} */
+				}
+			}	
+		?>
+      ]);
+
+      var options2 = {
+        chart: {
+          title: 'PM 2.5',
+          subtitle: 'Air Quality Index (µg./m3)'
+        },
+        width: 450,
+        height: 250,
+        axes: {
+          x: {
+            0: {side: 'bottom'}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('line_top_x2'));
+
+      chart.draw(data2, google.charts.Line.convertOptions(options2));
+    }
+  </script>
 <script>
 	$('#displayNotif').on('click', function(){
 		var placementFrom = $('#notify_placement_from option:selected').val();
