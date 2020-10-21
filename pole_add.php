@@ -75,7 +75,7 @@
 														<button type="submit" name="save" class="btn btn-success">Submit</button>
 													<!--	<button class="btn btn-danger">Cancel</button> -->
 														<input type="button" name="year" class="btn btn-danger" value="Cancel"
-														onclick="window.location='dash.php?ran=<?=$ran;?>'"/>
+														onclick="window.location='setting.php?ran=<?=$ran;?>'"/>
 														
 													</div>
 												</div>

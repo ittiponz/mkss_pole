@@ -349,25 +349,25 @@
 									<div class="row">
 										<div class="col-md-2 col-sm-12" align="center">
 											<?php 
-											$sqli="SELECT * FROM log where log_pole_id='$pole_id' ORDER BY log.log_dt DESC";
+											$sqli="SELECT * FROM logs where log_pole_id='$pole_id'";
 											$result = mysqli_query($db,$sqli);  
 										
 											if(mysqli_num_rows($result) > 0){
 												while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-												$temp_r=$row['log_temp'];
-												$hummit=$row['log_hum'];
+												$temp_r=$row['log_temp']/10;
+												$hummit=$row['log_hum']/10;
 												//$pm=$row['log_pm25'];
 												
 												}
 											}
-										
+											//$temp_r=22;
 										 if($temp_r > 30){?>
-											<i class="fas fa-temperature-high" style="font-size:30px;color:orange"></i>
-											<font style="font-size:24px;color:orange"><?php echo $temp_r. "°C"; ?></font>
+											<i class="fas fa-temperature-high" style="font-size:30px;color:#FFA521"></i>
+											<font style="font-size:24px;color:#FFA521"><?php echo $temp_r. "°C"; ?></font>
 											&nbsp; &nbsp; &nbsp;
 										 <?php }elseif($temp_r < 30){?>
-											<i class="fas fa-temperature-low" style="font-size:30px;color:blue"></i>
-											<font style="font-size:24px;color:blue"><?php echo $temp_r. "°C"; ?></font>
+											<i class="fas fa-temperature-low" style="font-size:30px;color:#2196F3"></i>
+											<font style="font-size:24px;color:#2196F3"><?php echo $temp_r. "°C"; ?></font>
 											&nbsp; &nbsp; &nbsp;
 										 <?php } ?>
 										 
@@ -414,7 +414,7 @@
 										<?php
 												//&#3652;&#3615;&#3621;&#3660;&#3648;&#3594;&#3639;&#3656;&#3629;&#3617;&#3605;&#3656;&#3629;&#3585;&#3633;&#3610; database &#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3652;&#3604;&#3657;&#3626;&#3619;&#3657;&#3634;&#3591;&#3652;&#3623;&#3657;&#3585;&#3656;&#3629;&#3609;&#3627;&#3609;&#3657;&#3634;&#3609;&#3657;&#3637;
 
-												$sql="SELECT * FROM log where log_pole_id='$pole_id' ORDER BY log.log_dt DESC";			
+												$sql="SELECT * FROM logs where log_pole_id='$pole_id' ORDER BY logs.log_dt DESC";			
 												$result=mysqli_query($db,$sql); 
 												// echo $sql;
 												if(mysqli_num_rows($result) > 0){
@@ -426,9 +426,9 @@
 													$log_cam1=$row['log_cam1'];
 													$log_cam2=$row['log_cam2'];
 													$log_spk=$row['log_spk'];
-													$log_temp=$row['log_temp'];
-													$log_hum=$row['log_hum'];
-													$log_pm25=$row['log_pm25'];
+													$log_temp=$row['log_temp']/10;
+													$log_hum=$row['log_hum']/10;
+													$log_pm25=$row['log_pm25']/10;
 													$log_led_disp=$row['log_led_disp'];
 													$log_ONU=$row['log_ONU'];
 													$log_ATA=$row['log_ATA'];

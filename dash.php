@@ -29,7 +29,9 @@
 			};
 			var map = new google.maps.Map(document.getElementById('map_canvas'),
 				myOptions);
-			
+			var image1 ="./icon/mark1.png";
+			var image2 ="./icon/mark2.png";
+			var image3 ="./icon/mark3.png";
 			// marker
 			<?php
 				$sql="SELECT * FROM pole";
@@ -44,8 +46,15 @@
 							var marker{$i} = new google.maps.Marker({
 								map,
 								position: pos{$i},
-								animation: google.maps.Animation.DROP,
-							});
+								animation: google.maps.Animation.DROP,";
+								if($row['pole_stat']=="offline"){
+									echo "icon: image1,";
+								}elseif($row['pole_stat']=="disable"){
+									echo "icon: image3,";
+								}else{
+									echo "icon: image2,";
+								}
+							echo "});
 						";
 						
 						echo "

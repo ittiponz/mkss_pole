@@ -60,7 +60,7 @@
 		echo "<br>";
 		echo $pole_add;
 */
-		$sql="UPDATE log SET log_dt=now(),log_dev_id='$log_dev_id',log_led='$log_led',log_led_battery='$log_led_battery',
+		$sql="UPDATE logs SET log_dt=now(),log_dev_id='$log_dev_id',log_led='$log_led',log_led_battery='$log_led_battery',
 		log_fire_alarm='$log_fire_alarm',log_switch='$log_switch',log_cam1='$log_cam1',log_cam2='$log_cam2',log_spk='$log_spk',
 		log_temp='$log_temp',log_hum='$log_hum',log_pm25='$log_pm25',log_led_disp='$log_led_disp',log_ONU='$log_ONU',log_ATA='$log_ATA',
 		log_IOT_GW='$log_IOT_GW',log_POE_sw='$log_POE_sw',log_solar_pv='$log_solar_pv',log_solar_bat='$log_solar_bat',

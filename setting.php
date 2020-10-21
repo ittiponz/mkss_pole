@@ -76,9 +76,9 @@
 																	
 																		echo "<tr>";
 																			echo "<td>" .$row['pole_id'] .  "</td> ";
-																			echo "<td><a href=\"pole_setting.php?ran=".$ran."&pole_id=".$pole_id."\">".$row['pole_name'] ."</a></td>\n";
+																			echo "<td><a href=\"pole_setting.php?ran=".$ran."&pole_id=".$pole_id."\">".$pole_name."</a></td>\n";
 																			echo "<td>" .$row['pole_stat'] .  "</td> ";
-																			echo "<td><a href=\"pole_delete.php?ran=".$ran."&pole_id=".$pole_id."\">Delete</a></td>\n";
+																			echo "<td><a href='pole_delete.php?ran=".$ran."&pole_id=".$pole_id."' onclick='return confirm(\"Are you sure to delete Pole name => ".$pole_name." ?\")' type='button' class='btn btn-outline-danger btn-sm'>Delete</a></td>\n";
 																					
 																		} 
 																	}

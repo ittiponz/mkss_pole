@@ -55,7 +55,7 @@
 											<input type="hidden" name="pole_id" id="pole_id" value="<?php echo $pole_id;?>">
 												<?php
 												
-													$sql="SELECT * FROM log where log_dev_id='$pole_id'";			
+													$sql="SELECT * FROM logs where log_dev_id='$pole_id'";			
 													$result=mysqli_query($db,$sql); 
 													// echo $sql;
 													if(mysqli_num_rows($result) > 0){

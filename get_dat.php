@@ -11,7 +11,7 @@
 	}
 	*/
 	
-	$sql="SELECT * FROM log order by log_dt DESC";
+	$sql="SELECT * FROM logs order by log_dt DESC";
 	$result=mysqli_query($db, $sql); 
 	if(mysqli_num_rows($result) > 0){
 		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
