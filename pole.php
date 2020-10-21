@@ -382,35 +382,6 @@
 											
 											<?php } ?>
 										</div>
-										
-										<div class="col-md-2 col-xs-6" align="center">
-											<div class="container">
-												<img src="assets/img/pole-font.png" width="100%">
-												<button class="btn1" data-toggle="tooltip" title="Display!" ></button>
-												<button class="btn2" data-toggle="tooltip" data-placement="right" 
-												title="Fire Alarm"></button>
-												<button class="btn3" data-toggle="tooltip" data-placement="right" 
-												title="Camera"></button>
-												<button class="btn4" data-toggle="tooltip" title=""></button>
-												<button class="btn5" data-toggle="tooltip" title=""></button>
-												<button class="btn6" data-toggle="tooltip" data-placement="right" 
-												title="Switch"></button>
-												<button class="btn7" data-toggle="tooltip" title=""></button>
-												<button class="btn8" data-toggle="tooltip" title="Solarcell"></button>
-												<button class="btn9" data-toggle="tooltip" title=""></button>
-											</div>
-										</div>
-										<div class="col-md-2 col-xs-6" align="center">
-											<div class="container">
-												<img src="assets/img/pole-back.png" width="100%">
-												<button class="btn10" data-toggle="tooltip" data-placement="right"
-												 title="Fire Alarm"></button>
-												<button class="btn11" data-toggle="tooltip" title=""></button>
-												<button class="btn12" data-toggle="tooltip" title="Solarcell"></button>
-												<button class="btn13" data-toggle="tooltip" title="Display"></button>
-											</div>
-										</div>
-										
 										<?php
 												//&#3652;&#3615;&#3621;&#3660;&#3648;&#3594;&#3639;&#3656;&#3629;&#3617;&#3605;&#3656;&#3629;&#3585;&#3633;&#3610; database &#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3652;&#3604;&#3657;&#3626;&#3619;&#3657;&#3634;&#3591;&#3652;&#3623;&#3657;&#3585;&#3656;&#3629;&#3609;&#3627;&#3609;&#3657;&#3634;&#3609;&#3657;&#3637;
 
@@ -444,6 +415,31 @@
 												}
 												
 											?>
+										<div class="col-md-2 col-xs-6" align="center">
+											<div class="container">
+												<img src="assets/img/pole-font.png" width="100%">
+												<button class="btn1" data-toggle="tooltip" title="Display!" ></button>
+												<button class="btn2" data-toggle="tooltip" data-placement="right" title="Fire Alarm"></button>
+												<button class="btn3" data-toggle="tooltip" data-placement="right" title="Camera"></button>
+												<button class="btn4" data-toggle="tooltip" title=""></button>
+												<button class="btn5" data-toggle="tooltip" title=""></button>
+												<button class="btn6" data-toggle="tooltip" data-placement="right" title="Switch"></button>
+												<button class="btn7" data-toggle="tooltip" title=""></button>
+												<button class="btn8" data-toggle="tooltip" title="Solarcell : <?php echo $log_solar_pv;?>"></button>
+												<button class="btn9" data-toggle="tooltip" title=""></button>
+											</div>
+										</div>
+										<div class="col-md-2 col-xs-6" align="center">
+											<div class="container">
+												<img src="assets/img/pole-back.png" width="100%">
+												<button class="btn10" data-toggle="tooltip" data-placement="right" title="Fire Alarm"></button>
+												<button class="btn11" data-toggle="tooltip" title=""></button>
+												<button class="btn12" data-toggle="tooltip" title="Solarcell : <?php echo $log_solar_pv;?>"></button>
+												<button class="btn13" data-toggle="tooltip" title="Display"></button>
+											</div>
+										</div>
+										
+										
 										<div class="col-md-2 col-xs-6">
 										
 											<div class="container">
