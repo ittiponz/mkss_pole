@@ -175,6 +175,9 @@ $date = $_POST['daterange'];  // value &#3607;&#3637;&#3656;&#3626;&#3656;&#3591
 																			echo "<td>" .$row['log_fire_alarm'] .  "</td> ";
 																					
 																		} 
+																	} else {
+																		echo "<tr>";
+																			echo "<td>No have Data..</td> ";
 																	}
 																	
 																	
@@ -213,9 +216,12 @@ $date = $_POST['daterange'];  // value &#3607;&#3637;&#3656;&#3626;&#3656;&#3591
 																		while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
 																		$temp=$row['avg_temp'];
 																		$hum=$row['avg_hum'];
-																		$pm=$row['avg_pm25'];
-																		
+																		$pm=$row['avg_pm25'];																		
 																		}
+																	}else{
+																		$temp=0;
+																		$hum=0;
+																		$pm=0;
 																	}
 																	//echo $temp;	
 																	?>
@@ -394,7 +400,9 @@ google.charts.load('current', {
 						echo "[$t,  $show_temp],";
 					} */
 				}
-			}	
+			}else{
+				echo "[1,  0],";
+			}
 		?>
       ]);
 
@@ -442,7 +450,9 @@ google.charts.load('current', {
 						echo "[$t,  $show_temp],";
 					} */
 				}
-			}	
+			}else{
+				echo "[1,  0],";
+			}
 		?>
       ]);
 
