@@ -128,19 +128,19 @@ $date = $_POST['daterange'];  // value &#3607;&#3637;&#3656;&#3626;&#3656;&#3591
 																	<?php
 																	//&#3652;&#3615;&#3621;&#3660;&#3648;&#3594;&#3639;&#3656;&#3629;&#3617;&#3605;&#3656;&#3629;&#3585;&#3633;&#3610; database &#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3652;&#3604;&#3657;&#3626;&#3619;&#3657;&#3634;&#3591;&#3652;&#3623;&#3657;&#3585;&#3656;&#3629;&#3609;&#3627;&#3609;&#3657;&#3634;&#3609;&#3657;&#3637;
 																	if($date != ""){
-																		$sql="SELECT * FROM logs where log_dt BETWEEN '$dt_srt 00:00:00' AND '$dt_stp 23:59:59' ";
+																		$sql="SELECT * FROM log where log_dt BETWEEN '$dt_srt 00:00:00' AND '$dt_stp 23:59:59' ";
 																		$result=mysqli_query($db,$sql); 
 																	}elseif($date_day != ""){
-																		$sql="SELECT * FROM logs where log_dt BETWEEN '$date_day 00:00:00' AND '$now 23:59:59' ";
+																		$sql="SELECT * FROM log where log_dt BETWEEN '$date_day 00:00:00' AND '$now 23:59:59' ";
 																		$result=mysqli_query($db,$sql); 
 																	}elseif($date_week != ""){
-																		$sql="SELECT * FROM logs where log_dt BETWEEN '$date_week 00:00:00' AND '$now 23:59:59' ";
+																		$sql="SELECT * FROM log where log_dt BETWEEN '$date_week 00:00:00' AND '$now 23:59:59' ";
 																		$result=mysqli_query($db,$sql); 
 																	}elseif($date_mounth != ""){
-																		$sql="SELECT * FROM logs where log_dt BETWEEN '$sql_monthS 00:00:00' AND '$sql_monthE 23:59:59' ";
+																		$sql="SELECT * FROM log where log_dt BETWEEN '$sql_monthS 00:00:00' AND '$sql_monthE 23:59:59' ";
 																		$result=mysqli_query($db,$sql); 
 																	}elseif($date_year != ""){
-																		$sql="SELECT * FROM logs where log_dt BETWEEN '$sql_yaerS 00:00:00' AND '$sql_yaerE 23:59:59' ";
+																		$sql="SELECT * FROM log where log_dt BETWEEN '$sql_yaerS 00:00:00' AND '$sql_yaerE 23:59:59' ";
 																		$result=mysqli_query($db,$sql); 
 																	}
 																	// echo $sql;
@@ -185,31 +185,31 @@ $date = $_POST['daterange'];  // value &#3607;&#3637;&#3656;&#3626;&#3656;&#3591
 																		$sqli="SELECT FORMAT(AVG(log_temp),2) AS avg_temp,
 																		FORMAT(AVG(log_hum),2) AS avg_hum,
 																		FORMAT(AVG(log_pm25),2) AS avg_pm25
-																		FROM logs where log_dt BETWEEN '$dt_srt 00:00:00' AND '$dt_stp 23:59:59'";
+																		FROM log where log_dt BETWEEN '$dt_srt 00:00:00' AND '$dt_stp 23:59:59'";
 																		$result = mysqli_query($db,$sqli); 
 																	}elseif($date_day != ""){
 																		$sqli="SELECT FORMAT(AVG(log_temp),2) AS avg_temp,
 																		FORMAT(AVG(log_hum),2) AS avg_hum,
 																		FORMAT(AVG(log_pm25),2) AS avg_pm25
-																		FROM logs where log_dt BETWEEN '$date_day 00:00:00' AND '$now 23:59:59'";
+																		FROM log where log_dt BETWEEN '$date_day 00:00:00' AND '$now 23:59:59'";
 																		$result = mysqli_query($db,$sqli); 
 																	}elseif($date_week != ""){
 																		$sqli="SELECT FORMAT(AVG(log_temp),2) AS avg_temp,
 																		FORMAT(AVG(log_hum),2) AS avg_hum,
 																		FORMAT(AVG(log_pm25),2) AS avg_pm25
-																		FROM logs where log_dt BETWEEN '$date_week 00:00:00' AND '$now 23:59:59'";
+																		FROM log where log_dt BETWEEN '$date_week 00:00:00' AND '$now 23:59:59'";
 																		$result = mysqli_query($db,$sqli); 
 																	}elseif($date_mounth != ""){
 																		$sqli="SELECT FORMAT(AVG(log_temp),2) AS avg_temp,
 																		FORMAT(AVG(log_hum),2) AS avg_hum,
 																		FORMAT(AVG(log_pm25),2) AS avg_pm25
-																		FROM logs where log_dt BETWEEN '$date_mounth 00:00:00' AND '$now 23:59:59'";
+																		FROM log where log_dt BETWEEN '$date_mounth 00:00:00' AND '$now 23:59:59'";
 																		$result = mysqli_query($db,$sqli);  
 																	}elseif($date_year != ""){
 																		$sqli="SELECT FORMAT(AVG(log_temp),2) AS avg_temp,
 																		FORMAT(AVG(log_hum),2) AS avg_hum,
 																		FORMAT(AVG(log_pm25),2) AS avg_pm25
-																		FROM logs where log_dt BETWEEN '$date_year 00:00:00' AND '$now 23:59:59'";
+																		FROM log where log_dt BETWEEN '$date_year 00:00:00' AND '$now 23:59:59'";
 																		$result = mysqli_query($db,$sqli);  
 																	}
 																	if(mysqli_num_rows($result) > 0){

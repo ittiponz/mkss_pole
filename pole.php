@@ -349,7 +349,7 @@
 									<div class="row">
 										<div class="col-md-2 col-sm-12" align="center">
 											<?php 
-											$sqli="SELECT * FROM logs where log_pole_id='$pole_id'";
+											$sqli="SELECT * FROM log where log_pole_id='$pole_id'";
 											$result = mysqli_query($db,$sqli);  
 										
 											if(mysqli_num_rows($result) > 0){
@@ -385,7 +385,7 @@
 										<?php
 												//&#3652;&#3615;&#3621;&#3660;&#3648;&#3594;&#3639;&#3656;&#3629;&#3617;&#3605;&#3656;&#3629;&#3585;&#3633;&#3610; database &#3607;&#3637;&#3656;&#3648;&#3619;&#3634;&#3652;&#3604;&#3657;&#3626;&#3619;&#3657;&#3634;&#3591;&#3652;&#3623;&#3657;&#3585;&#3656;&#3629;&#3609;&#3627;&#3609;&#3657;&#3634;&#3609;&#3657;&#3637;
 
-												$sql="SELECT * FROM logs where log_pole_id='$pole_id' ORDER BY logs.log_dt DESC";			
+												$sql="SELECT * FROM log where log_pole_id='$pole_id' ORDER BY log.log_dt DESC";			
 												$result=mysqli_query($db,$sql); 
 												// echo $sql;
 												if(mysqli_num_rows($result) > 0){
